@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/ImportedAssets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
-    path: Assets/Assets/Scenes/Menu_Scene/Main_menu.unity
+    path: Assets/Scenes/Main_menu.unity
     guid: 4684c91e2c4ab4a6d9c67d34a0911f91
   - enabled: 1
     path: Assets/Assets/Scenes/HubWorld/Hub World.unity
@@ -17,15 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/level select/Level Select.unity
     guid: 2d392d2abff484183903161f62be9d51
-  - enabled: 0
-    path: Assets/Assets/Scenes/X-House Level 1/Old Man House.unity
-    guid: 461b362dfa6a54691aa716e13a3211f3
-  - enabled: 1
-    path: Assets/Assets/Scenes/X-Test Level/Setup Heist.unity
-    guid: 7fe81d02ec9c94128b8e6e84f5c4f95b
-  - enabled: 1
-    path: Assets/Assets/Scenes/Bank_Level_1/Old/Bank_Level_1.unity
-    guid: 9518ad0ad4f474d7d94f2e17a24328fa
   - enabled: 1
     path: Assets/Assets/Scenes/level select/Planning Level Select.unity
     guid: 88783e76ab8d941468b9261820912bab
@@ -44,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Assets/Scenes/Tutorial/Tutorial 2.unity
     guid: 704ca433ebc126e448aa517e96383700
+  - enabled: 1
+    path: Assets/Scenes/ConnectToServer.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 85823a0b946a449238fd01784031d170
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level_01.unity
+    guid: 95de9c3e4fa319a418b094130d696c61
   m_configObjects: {}

@@ -35029,7 +35029,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &661372479
 Transform:
   m_ObjectHideFlags: 0
@@ -35038,7 +35038,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661372478}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.6, y: 7.16, z: -17.2}
+  m_LocalPosition: {x: -1.6, y: 10.57, z: -17.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 475089835}
@@ -44829,7 +44829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &930162748
 Transform:
   m_ObjectHideFlags: 0
@@ -95859,6 +95859,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3522572252888582307, guid: d59f28bf494124362be88bfe32189e75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8108503280011590800, guid: d59f28bf494124362be88bfe32189e75,
         type: 3}
       propertyPath: transitionUI
@@ -110326,7 +110331,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119511685}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 31, y: -8.27, z: 80.59}
+  m_LocalPosition: {x: 21.3, y: -8.27, z: -35.3}
   m_LocalScale: {x: 0.17814979, y: 0.17814979, z: 0.17814979}
   m_Children:
   - {fileID: 1167739332}
