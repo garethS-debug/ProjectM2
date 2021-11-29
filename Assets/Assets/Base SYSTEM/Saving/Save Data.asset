@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a4df66872c3e414983f1900466806d9, type: 3}
+  m_Name: Save Data
+  m_EditorClassIdentifier: 
+  GlobalTotalScore: 100
+  GlobalTotalCash: 2000000
+  InventoryList: []
+  LevelInformationFiles:
+  - {fileID: 11400000, guid: 577cdb4afdbc940eca8d5e37f312e6cf, type: 2}
+  HeistLevel:
+  - LevelID: 1
+    hasKeyLocation: 0
+    Score: 0
+    SpottedPenetlies: 0
+    TotalScore: 0
+    SpottedNo: 0
+    Cash: 0
+    eventID: 
+  - LevelID: 2
+    hasKeyLocation: 1
+    Score: 100
+    SpottedPenetlies: 100
+    TotalScore: 100
+    SpottedNo: 100
+    Cash: 100
+    eventID: 01000000000000000000000000000000
+  - LevelID: 3
+    hasKeyLocation: 0
+    Score: 0
+    SpottedPenetlies: 0
+    TotalScore: 0
+    SpottedNo: 0
+    Cash: 0
+    eventID: 
+  tutorialCompleted: 0

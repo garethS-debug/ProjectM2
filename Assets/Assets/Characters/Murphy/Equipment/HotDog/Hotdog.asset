@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72544513312374b0787a3a4097b6fb71, type: 3}
+  m_Name: Hotdog
+  m_EditorClassIdentifier: 
+  name: Hotdog Costume
+  icon: {fileID: 21300000, guid: 32218e72e6d8f45e5b2139c140c1421a, type: 3}
+  isDefaultItem: 0
+  ItemID: 0
+  isQuestItem: 0
+  questID: 0
+  AddXtoQuest: 0
+  UIMarkerObjective: {fileID: 0}
+  isVaultKey: 0
+  isFoodEvent: 0
+  isMechanicEvent: 0
+  isStaffRota: 0
+  isMainObjective: 0
+  consumableItem: 0
+  consumeHealth: 0
+  ItemGameObj: {fileID: 201585429391119641, guid: f88a9137769d94e7c8cfb71baabe8511,
+    type: 3}
+  isShopItem: 0
+  itemPrice: 0
+  itemDescription: 
+  itemValue: 0
+  isCashPickup: 0
+  isEquipableItem: 1
+  RenderMesh: 1
+  equipSlot: 0
+  armorModifier: 1
+  damageModifier: 1
+  stealthModifier: 0
+  lockpickingModifier: 0
+  speedModifier: 0
+  wealthModifier: 0
+  stealth: 5
+  isCostume: 1
+  WhoDoIFool: Hotdog
+  WhoDoIFools:
+  - Hotdog
+  IFoolTheGuards: 1
+  IFoolTheCamera: 1
+  IFoolTheStaff: 1
+  mesh: {fileID: 6027203091244138210, guid: 1e6e217e186504c378141a950dd52f2a, type: 3}

@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2298118754710294724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3008359523547964119}
+  - component: {fileID: 6117244761200023777}
+  - component: {fileID: 565299439845614616}
+  - component: {fileID: 2339412540868270842}
+  - component: {fileID: 7759462562796271278}
+  - component: {fileID: 9015850449333138084}
+  m_Layer: 0
+  m_Name: Lock Pick
+  m_TagString: InventoryItem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3008359523547964119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298118754710294724}
+  m_LocalRotation: {x: 0.020728711, y: -0.020843362, z: 0.7066551, w: 0.7069474}
+  m_LocalPosition: {x: 25.991, y: -7.2809, z: -14.214}
+  m_LocalScale: {x: 2.19871, y: 4.53071, z: 4.53071}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 3.3690002, y: -0.010000001, z: 89.976006}
+--- !u!33 &6117244761200023777
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298118754710294724}
+  m_Mesh: {fileID: 8772314391258816753, guid: 90026027ce8cff1419381cb288e0be60, type: 3}
+--- !u!23 &565299439845614616
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298118754710294724}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 5032788614518317635, guid: 90026027ce8cff1419381cb288e0be60, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &2339412540868270842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298118754710294724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50aff74ac9bfc40bca5b31caa639d195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractRadius: 3
+  interactionTransform: {fileID: 3008359523547964119}
+  player: {fileID: 0}
+  interactingwithNPC: 0
+  itemProperties: {fileID: 11400000, guid: 9729226e1bff6304eba7f228b47f70e1, type: 2}
+  item: {fileID: 2339412540868270842}
+  preFab: {fileID: 2298118754710294724}
+  PickupText: {fileID: 0}
+  PickUpTextBox: {fileID: 0}
+  PickUpObjText: Pick Up Lock Pick
+  PromptText: Pick Up Lock Pick
+--- !u!65 &7759462562796271278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298118754710294724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.027119372, y: 0.040433697, z: 0.2040994}
+  m_Center: {x: 0.00000002672893, y: -0.007893763, z: -0.0037225336}
+--- !u!54 &9015850449333138084
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2298118754710294724}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

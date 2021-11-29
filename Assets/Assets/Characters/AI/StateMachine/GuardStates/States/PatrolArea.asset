@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beee7c5cc5764af4ab2f0e8ea5fd9e07, type: 3}
+  m_Name: PatrolArea
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: dcf4404650c0fda4f9a773cd0c7227f4, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: 8db88018185761142b182a10bb27ba92, type: 2}
+    trueState: {fileID: 11400000, guid: 02947eb5865771e4d83ec3f3edd3698d, type: 2}
+    falseState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+  - decision: {fileID: 11400000, guid: 6042925ebaade6e4ba0fd6f9e4dbb90f, type: 2}
+    trueState: {fileID: 11400000, guid: 714591d24d298b04ab54e23581c93ec1, type: 2}
+    falseState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+  - decision: {fileID: 11400000, guid: a267f04f2503aff4795761f314c8f6b9, type: 2}
+    trueState: {fileID: 11400000, guid: 714591d24d298b04ab54e23581c93ec1, type: 2}
+    falseState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+  stateMarker: {fileID: 21300000, guid: cdb6e27f82a114188bd9a467367275b7, type: 3}
+  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  Notes: Comment Here.

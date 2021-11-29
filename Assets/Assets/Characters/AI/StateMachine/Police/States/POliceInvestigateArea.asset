@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beee7c5cc5764af4ab2f0e8ea5fd9e07, type: 3}
+  m_Name: POliceInvestigateArea
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 49ef16ef1fa6f044fa45f7aeb4c8b4e8, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: a486769c138fa0744b07f526aedbcf03, type: 2}
+    trueState: {fileID: 11400000, guid: d4d1bed1050da7c47a5b52d56baab49d, type: 2}
+    falseState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+  - decision: {fileID: 11400000, guid: 1a9936d1bc0974642a30ab8becded766, type: 2}
+    trueState: {fileID: 11400000, guid: 4e0d71ed85617d5468cf2088dcd59267, type: 2}
+    falseState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+  - decision: {fileID: 11400000, guid: e1a26c44c1fe064418edc0e753b25fcb, type: 2}
+    trueState: {fileID: 11400000, guid: 4e0d71ed85617d5468cf2088dcd59267, type: 2}
+    falseState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+  sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  Notes: Comment Here.

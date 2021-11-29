@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1194391159266046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4083483478487228}
+  - component: {fileID: 114289487369995898}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4083483478487228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194391159266046}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4340825268595862}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114289487369995898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194391159266046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94923b0d886984e7394d91dc26f6b620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questlist:
+  - title: Intro Quest
+    id: 3
+    progress: 1
+    description: 'Introduction Quest for testing. '
+    hint: Just leave the town and come back
+    congratulations: 'Yay, you made it, heres our reward. '
+    summary: This is a summary of the quest
+    nextQuest: 5
+    questObjective: LeaveTown1
+    questObjectiveCount: 0
+    questObjectiveRequired: 1
+    xpReward: 0
+    goldReward: 0
+    itemReward: 
+  - title: Second Quest
+    id: 2
+    progress: 1
+    description: Second Quest for Testing
+    hint: Just leave the town and come back
+    congratulations: 'Yay, you made it, heres our reward. '
+    summary: This is a summary of the quest
+    nextQuest: 0
+    questObjective: LeaveTown2
+    questObjectiveCount: 0
+    questObjectiveRequired: 1
+    xpReward: 0
+    goldReward: 0
+    itemReward: 
+  - title: Bug Testing
+    id: 5
+    progress: 1
+    description: Bug
+    hint: Bug2
+    congratulations: Bugs
+    summary: 'This is a summary '
+    nextQuest: 0
+    questObjective: Leave Town 5
+    questObjectiveCount: 0
+    questObjectiveRequired: 1
+    xpReward: 0
+    goldReward: 0
+    itemReward: 
+  currentQuestList: []
+--- !u!1 &1394139486314432
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4340825268595862}
+  m_Layer: 0
+  m_Name: Questing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4340825268595862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394139486314432}
+  m_LocalRotation: {x: -0, y: 0.06643455, z: -0, w: 0.9977908}
+  m_LocalPosition: {x: -21.5, y: 3.1399999, z: -22.8}
+  m_LocalScale: {x: 1.2513, y: 4.1047645, z: 1.2513}
+  m_Children:
+  - {fileID: 4083483478487228}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 7.6180005, z: 0}

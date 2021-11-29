@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_Texture_Highlight
+  m_Shader: {fileID: -6465566751694194690, guid: a52d9cd98acfa429f892ef2ff242842b,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_B71D0D74:
+        m_Texture: {fileID: 2800000, guid: e2a8b09e4058a4abf9bf559c11b63e9b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_F19D56FA: 0.2
+    m_Colors:
+    - Color_3D03D4B2: {r: 0.3142382, g: 0.3142382, b: 0.3142382, a: 0}
+    - Color_F7A5E4F2: {r: 1, g: 1, b: 1, a: 1}
+    - Vector2_3DDAA0B6: {r: -8, g: -8, b: -8, a: 1}

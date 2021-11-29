@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72544513312374b0787a3a4097b6fb71, type: 3}
+  m_Name: BoxCostume
+  m_EditorClassIdentifier: 
+  name: BoxCostume
+  icon: {fileID: 21300000, guid: 2d46093e894af854896b5d552ec993df, type: 3}
+  isDefaultItem: 0
+  ItemID: 0
+  isQuestItem: 0
+  questID: 0
+  AddXtoQuest: 0
+  UIMarkerObjective: {fileID: 0}
+  isVaultKey: 0
+  isFoodEvent: 0
+  isMechanicEvent: 0
+  isStaffRota: 0
+  isMainObjective: 0
+  consumableItem: 0
+  consumeHealth: 0
+  ItemGameObj: {fileID: 6618666440165997148, guid: 841a5ff5e4e8989498621ddb2120c232,
+    type: 3}
+  isShopItem: 0
+  itemPrice: 0
+  itemDescription: 
+  itemValue: 0
+  isCashPickup: 0
+  isEquipableItem: 1
+  RenderMesh: 1
+  equipSlot: 0
+  armorModifier: 0
+  damageModifier: 0
+  stealthModifier: 0
+  lockpickingModifier: 0
+  speedModifier: 0
+  wealthModifier: 0
+  stealth: 0
+  isCostume: 1
+  WhoDoIFool: Box
+  WhoDoIFools: []
+  IFoolTheGuards: 1
+  IFoolTheCamera: 1
+  IFoolTheStaff: 1
+  mesh: {fileID: 2014283282641805881, guid: 54d9583b83f794e43862d735b500729f, type: 3}

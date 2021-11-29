@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1ca868b9fde4046a402b76c9c59b71, type: 3}
+  m_Name: HealthPacl
+  m_EditorClassIdentifier: 
+  name: Health Pack
+  icon: {fileID: 21300000, guid: 5a3f637b1875446439b3cbfb0308e3c9, type: 3}
+  isDefaultItem: 0
+  ItemID: 3
+  isQuestItem: 0
+  questID: 0
+  AddXtoQuest: 0
+  UIMarkerObjective: {fileID: 0}
+  isVaultKey: 0
+  isFoodEvent: 0
+  isMechanicEvent: 0
+  isStaffRota: 0
+  isMainObjective: 0
+  consumableItem: 1
+  consumeHealth: 10
+  ItemGameObj: {fileID: 4303248236219653350, guid: eb607705a95f69d4e84799a42b38b5cb,
+    type: 3}
+  isShopItem: 1
+  itemPrice: 100
+  itemDescription: A large health boost for when your down on your luck
+  itemValue: 0
+  isCashPickup: 0

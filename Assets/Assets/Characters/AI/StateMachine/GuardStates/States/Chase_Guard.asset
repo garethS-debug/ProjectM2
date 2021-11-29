@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beee7c5cc5764af4ab2f0e8ea5fd9e07, type: 3}
+  m_Name: Chase_Guard
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: c508e6823017cbe4286b08d83c0972c4, type: 2}
+  transitions:
+  - decision: {fileID: 11400000, guid: f6890e4f3806de349941261bdd3b8e84, type: 2}
+    trueState: {fileID: 11400000, guid: 4f0df3419ff65b041aff0bf534190d0a, type: 2}
+    falseState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+  - decision: {fileID: 11400000, guid: 6042925ebaade6e4ba0fd6f9e4dbb90f, type: 2}
+    trueState: {fileID: 11400000, guid: 395802ef1adf3f949b81faf70e585598, type: 2}
+    falseState: {fileID: 11400000, guid: c133eb00f1f335045b092386696482e5, type: 2}
+  stateMarker: {fileID: 21300000, guid: cdb6e27f82a114188bd9a467367275b7, type: 3}
+  sceneGizmoColor: {r: 0.3539516, g: 0.7735849, b: 0.71514016, a: 1}
+  Notes: Comment Here.

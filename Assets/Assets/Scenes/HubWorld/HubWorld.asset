@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a91880e3b0794de9b9934b5d07225e1, type: 3}
+  m_Name: HubWorld
+  m_EditorClassIdentifier: 
+  LevelID: 999
+  hasKeyLocation: 0
+  hasGuardRota: 0
+  hasMechanicEvent: 0
+  hasFoodEvent: 0
+  GuardAmountWithRota: 0
+  GuardAmountWithoutRota: 0
+  Score: 0
+  SpottedPenetlies: 0
+  TotalScore: 0
+  SpottedNo: 0
+  Cash: 0

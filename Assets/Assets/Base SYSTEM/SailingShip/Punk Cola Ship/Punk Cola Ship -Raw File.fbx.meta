@@ -1,0 +1,861 @@
+fileFormatVersion: 2
+guid: 6c29f3339b1bd48878a1fdcd56b9e998
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: BezierCurve.002
+    100002: BezierCurve.003
+    100004: BezierCurve.004
+    100006: BezierCurve.005
+    100008: BezierCurve.006
+    100010: BezierCurve.007
+    100012: BezierCurve.008
+    100014: BezierCurve.016
+    100016: BezierCurve.018
+    100018: BezierCurve.033
+    100020: BezierCurve.034
+    100022: BezierCurve.035
+    100024: BezierCurve.036
+    100026: BezierCurve.037
+    100028: BezierCurve.041
+    100030: BezierCurve.042
+    100032: BezierCurve.049
+    100034: BezierCurve.050
+    100036: BezierCurve.051
+    100038: BezierCurve.052
+    100040: BezierCurve.053
+    100042: BoatHouse
+    100044: Central Rope
+    100046: Circle.000
+    100048: Circle.001
+    100050: Circle.002
+    100052: Circle.003
+    100054: Circle.004
+    100056: Circle.029
+    100058: Circle.030
+    100060: Circle.034
+    100062: Circle.035
+    100064: Circle.036
+    100066: Circle.037
+    100068: Circle.038
+    100070: coke bottle
+    100072: Cone.000
+    100074: Cone.001
+    100076: Cone.002
+    100078: Cone.004
+    100080: Cube.000
+    100082: Cube.003
+    100084: Cube.004
+    100086: Cube.005
+    100088: Cube.009
+    100090: Cube.010
+    100092: Cube.011
+    100094: Cube.012
+    100096: Cube.013
+    100098: Cube.015
+    100100: Cube.016
+    100102: Cube.017
+    100104: Cube.018
+    100106: Cube.019
+    100108: Cube.020
+    100110: Cube.021
+    100112: Cube.048
+    100114: Cube.065
+    100116: Cube.067
+    100118: Cylinder.068
+    100120: Door
+    100122: Drum Cylinder
+    100124: Drum Cylinder.001
+    100126: Drum Top
+    100128: Drum Top.001
+    100130: Mirror.000
+    100132: Mirror.001
+    100134: Mirror.002
+    100136: Mirror.003
+    100138: Paddles
+    100140: Piston
+    100142: Piston.001
+    100144: Piston.002
+    100146: Piston.003
+    100148: Piston.004
+    100150: Piston.005
+    100152: Piston.006
+    100154: Piston.007
+    100156: Piston.008
+    100158: Piston.009
+    100160: Piston.010
+    100162: Piston.011
+    100164: Piston.012
+    100166: Piston.013
+    100168: Piston.014
+    100170: Piston.015
+    100172: Piston.016
+    100174: Piston.017
+    100176: Piston.018
+    100178: Piston.019
+    100180: Piston.020
+    100182: Piston.021
+    100184: Piston.022
+    100186: Piston.023
+    100188: Piston.024
+    100190: Piston.025
+    100192: Piston.026
+    100194: //RootNode
+    100196: Rope on Drum
+    100198: Rope on drum 5
+    100200: Rope on drum 5.001
+    100202: Rope on Drum.001
+    100204: Rope on Drum2
+    100206: Rope on Drum2.001
+    100208: Rope on ship 2
+    100210: Rope_on_Drum_3
+    100212: Rope_on_Drum_3.001
+    100214: Rope_on_Drum_4
+    100216: Rope_on_Drum_4.001
+    100218: Rope_Ship_Poole
+    100220: SeawedCurve.001
+    100222: SeawedCurve.002
+    100224: SeawedCurve.003
+    100226: SeawedCurve.004
+    100228: SeawedCurve.005
+    100230: SeawedCurve.006
+    100232: SeawedCurve.007
+    100234: SeawedCurve.008
+    100236: SeawedCurve.009
+    100238: SeawedCurve.010
+    100240: SeaWeed.001
+    100242: SeaWeed.002
+    100244: SeaWeed.003
+    100246: SeaWeed.004
+    100248: SeaWeed.005
+    100250: SeaWeed.006
+    100252: SeaWeed.007
+    100254: SeaWeed.008
+    100256: SeaWeed.009
+    100258: SeaWeed.010
+    100260: Shields
+    100262: Sleeping Quarters
+    100264: SpeakerGrill
+    100266: SpeakerGrill.001
+    100268: SpeakerGrill.002
+    100270: SpeakerGrill.003
+    100272: SpeakerGrill.004
+    100274: SpeakerGrill.005
+    100276: Sphere.000
+    100278: Sphere.001
+    100280: Sphere.002
+    100282: Sphere.003
+    100284: Sphere.004
+    100286: Sphere.005
+    100288: Sphere.011
+    100290: Sphere.020
+    100292: Sphere.021
+    100294: Spot
+    100296: Sun
+    100298: Top Boat Box
+    400000: BezierCurve.002
+    400002: BezierCurve.003
+    400004: BezierCurve.004
+    400006: BezierCurve.005
+    400008: BezierCurve.006
+    400010: BezierCurve.007
+    400012: BezierCurve.008
+    400014: BezierCurve.016
+    400016: BezierCurve.018
+    400018: BezierCurve.033
+    400020: BezierCurve.034
+    400022: BezierCurve.035
+    400024: BezierCurve.036
+    400026: BezierCurve.037
+    400028: BezierCurve.041
+    400030: BezierCurve.042
+    400032: BezierCurve.049
+    400034: BezierCurve.050
+    400036: BezierCurve.051
+    400038: BezierCurve.052
+    400040: BezierCurve.053
+    400042: BoatHouse
+    400044: Central Rope
+    400046: Circle.000
+    400048: Circle.001
+    400050: Circle.002
+    400052: Circle.003
+    400054: Circle.004
+    400056: Circle.029
+    400058: Circle.030
+    400060: Circle.034
+    400062: Circle.035
+    400064: Circle.036
+    400066: Circle.037
+    400068: Circle.038
+    400070: coke bottle
+    400072: Cone.000
+    400074: Cone.001
+    400076: Cone.002
+    400078: Cone.004
+    400080: Cube.000
+    400082: Cube.003
+    400084: Cube.004
+    400086: Cube.005
+    400088: Cube.009
+    400090: Cube.010
+    400092: Cube.011
+    400094: Cube.012
+    400096: Cube.013
+    400098: Cube.015
+    400100: Cube.016
+    400102: Cube.017
+    400104: Cube.018
+    400106: Cube.019
+    400108: Cube.020
+    400110: Cube.021
+    400112: Cube.048
+    400114: Cube.065
+    400116: Cube.067
+    400118: Cylinder.068
+    400120: Door
+    400122: Drum Cylinder
+    400124: Drum Cylinder.001
+    400126: Drum Top
+    400128: Drum Top.001
+    400130: Mirror.000
+    400132: Mirror.001
+    400134: Mirror.002
+    400136: Mirror.003
+    400138: Paddles
+    400140: Piston
+    400142: Piston.001
+    400144: Piston.002
+    400146: Piston.003
+    400148: Piston.004
+    400150: Piston.005
+    400152: Piston.006
+    400154: Piston.007
+    400156: Piston.008
+    400158: Piston.009
+    400160: Piston.010
+    400162: Piston.011
+    400164: Piston.012
+    400166: Piston.013
+    400168: Piston.014
+    400170: Piston.015
+    400172: Piston.016
+    400174: Piston.017
+    400176: Piston.018
+    400178: Piston.019
+    400180: Piston.020
+    400182: Piston.021
+    400184: Piston.022
+    400186: Piston.023
+    400188: Piston.024
+    400190: Piston.025
+    400192: Piston.026
+    400194: //RootNode
+    400196: Rope on Drum
+    400198: Rope on drum 5
+    400200: Rope on drum 5.001
+    400202: Rope on Drum.001
+    400204: Rope on Drum2
+    400206: Rope on Drum2.001
+    400208: Rope on ship 2
+    400210: Rope_on_Drum_3
+    400212: Rope_on_Drum_3.001
+    400214: Rope_on_Drum_4
+    400216: Rope_on_Drum_4.001
+    400218: Rope_Ship_Poole
+    400220: SeawedCurve.001
+    400222: SeawedCurve.002
+    400224: SeawedCurve.003
+    400226: SeawedCurve.004
+    400228: SeawedCurve.005
+    400230: SeawedCurve.006
+    400232: SeawedCurve.007
+    400234: SeawedCurve.008
+    400236: SeawedCurve.009
+    400238: SeawedCurve.010
+    400240: SeaWeed.001
+    400242: SeaWeed.002
+    400244: SeaWeed.003
+    400246: SeaWeed.004
+    400248: SeaWeed.005
+    400250: SeaWeed.006
+    400252: SeaWeed.007
+    400254: SeaWeed.008
+    400256: SeaWeed.009
+    400258: SeaWeed.010
+    400260: Shields
+    400262: Sleeping Quarters
+    400264: SpeakerGrill
+    400266: SpeakerGrill.001
+    400268: SpeakerGrill.002
+    400270: SpeakerGrill.003
+    400272: SpeakerGrill.004
+    400274: SpeakerGrill.005
+    400276: Sphere.000
+    400278: Sphere.001
+    400280: Sphere.002
+    400282: Sphere.003
+    400284: Sphere.004
+    400286: Sphere.005
+    400288: Sphere.011
+    400290: Sphere.020
+    400292: Sphere.021
+    400294: Spot
+    400296: Sun
+    400298: Top Boat Box
+    2100000: SEAWEED
+    2100002: Floor
+    2100004: Piston
+    2100006: HAMMOKROPE
+    2100008: Hammok
+    2100010: Roof
+    2100012: BalllBearing
+    2100014: No Name
+    2100016: SpeakerGrill
+    2100018: Rope on Drum2
+    2100020: Rope_on_Drum_4
+    2100022: Rope on Drum
+    2100024: Rope on drum 5
+    2100026: Rope_on_Drum_3
+    2100028: Drum Top
+    2100030: Drum Base
+    2100032: ShipHull
+    2100034: Paddles
+    2100036: Shields
+    2100038: Top Boat Box
+    2100040: BoatHouse
+    2100042: Chimney
+    2100044: Door
+    2100046: Central Rope
+    2100048: Paddle
+    2100050: Sleeping Quarters
+    2100052: Rope on Ship 2
+    2100054: Rope_Ship_Poole
+    2100056: Punk Cola bottle
+    2100058: Rope on ship
+    2300000: BezierCurve.002
+    2300002: BezierCurve.003
+    2300004: BezierCurve.004
+    2300006: BezierCurve.005
+    2300008: BezierCurve.006
+    2300010: BezierCurve.007
+    2300012: BezierCurve.008
+    2300014: BezierCurve.016
+    2300016: BezierCurve.018
+    2300018: BezierCurve.033
+    2300020: BezierCurve.034
+    2300022: BezierCurve.035
+    2300024: BezierCurve.036
+    2300026: BezierCurve.037
+    2300028: BezierCurve.041
+    2300030: BezierCurve.042
+    2300032: BezierCurve.049
+    2300034: BezierCurve.050
+    2300036: BezierCurve.051
+    2300038: BezierCurve.052
+    2300040: BezierCurve.053
+    2300042: BoatHouse
+    2300044: Central Rope
+    2300046: Circle.000
+    2300048: Circle.001
+    2300050: Circle.002
+    2300052: Circle.003
+    2300054: Circle.004
+    2300056: Circle.029
+    2300058: Circle.030
+    2300060: Circle.034
+    2300062: Circle.035
+    2300064: Circle.036
+    2300066: Circle.037
+    2300068: Circle.038
+    2300070: coke bottle
+    2300072: Cone.000
+    2300074: Cone.001
+    2300076: Cone.002
+    2300078: Cone.004
+    2300080: Cube.000
+    2300082: Cube.003
+    2300084: Cube.004
+    2300086: Cube.005
+    2300088: Cube.009
+    2300090: Cube.010
+    2300092: Cube.011
+    2300094: Cube.012
+    2300096: Cube.013
+    2300098: Cube.015
+    2300100: Cube.016
+    2300102: Cube.017
+    2300104: Cube.018
+    2300106: Cube.019
+    2300108: Cube.020
+    2300110: Cube.021
+    2300112: Cube.048
+    2300114: Cube.065
+    2300116: Cube.067
+    2300118: Cylinder.068
+    2300120: Door
+    2300122: Drum Cylinder
+    2300124: Drum Cylinder.001
+    2300126: Drum Top
+    2300128: Drum Top.001
+    2300130: Mirror.000
+    2300132: Mirror.001
+    2300134: Mirror.002
+    2300136: Mirror.003
+    2300138: Paddles
+    2300140: Piston
+    2300142: Piston.001
+    2300144: Piston.002
+    2300146: Piston.003
+    2300148: Piston.004
+    2300150: Piston.005
+    2300152: Piston.006
+    2300154: Piston.007
+    2300156: Piston.008
+    2300158: Piston.009
+    2300160: Piston.010
+    2300162: Piston.011
+    2300164: Piston.012
+    2300166: Piston.013
+    2300168: Piston.014
+    2300170: Piston.015
+    2300172: Piston.016
+    2300174: Piston.017
+    2300176: Piston.018
+    2300178: Piston.019
+    2300180: Piston.020
+    2300182: Piston.021
+    2300184: Piston.022
+    2300186: Piston.023
+    2300188: Piston.024
+    2300190: Piston.025
+    2300192: Piston.026
+    2300194: Rope on Drum
+    2300196: Rope on drum 5
+    2300198: Rope on drum 5.001
+    2300200: Rope on Drum.001
+    2300202: Rope on Drum2
+    2300204: Rope on Drum2.001
+    2300206: Rope on ship 2
+    2300208: Rope_on_Drum_3
+    2300210: Rope_on_Drum_3.001
+    2300212: Rope_on_Drum_4
+    2300214: Rope_on_Drum_4.001
+    2300216: Rope_Ship_Poole
+    2300218: SeawedCurve.001
+    2300220: SeawedCurve.002
+    2300222: SeawedCurve.003
+    2300224: SeawedCurve.004
+    2300226: SeawedCurve.005
+    2300228: SeawedCurve.006
+    2300230: SeawedCurve.007
+    2300232: SeawedCurve.008
+    2300234: SeawedCurve.009
+    2300236: SeawedCurve.010
+    2300238: SeaWeed.001
+    2300240: SeaWeed.002
+    2300242: SeaWeed.003
+    2300244: SeaWeed.004
+    2300246: SeaWeed.005
+    2300248: SeaWeed.006
+    2300250: SeaWeed.007
+    2300252: SeaWeed.008
+    2300254: SeaWeed.009
+    2300256: SeaWeed.010
+    2300258: Shields
+    2300260: Sleeping Quarters
+    2300262: SpeakerGrill
+    2300264: SpeakerGrill.001
+    2300266: SpeakerGrill.002
+    2300268: SpeakerGrill.003
+    2300270: SpeakerGrill.004
+    2300272: SpeakerGrill.005
+    2300274: Sphere.000
+    2300276: Sphere.001
+    2300278: Sphere.002
+    2300280: Sphere.003
+    2300282: Sphere.004
+    2300284: Sphere.005
+    2300286: Sphere.011
+    2300288: Sphere.020
+    2300290: Sphere.021
+    2300292: Top Boat Box
+    3300000: BezierCurve.002
+    3300002: BezierCurve.003
+    3300004: BezierCurve.004
+    3300006: BezierCurve.005
+    3300008: BezierCurve.006
+    3300010: BezierCurve.007
+    3300012: BezierCurve.008
+    3300014: BezierCurve.016
+    3300016: BezierCurve.018
+    3300018: BezierCurve.033
+    3300020: BezierCurve.034
+    3300022: BezierCurve.035
+    3300024: BezierCurve.036
+    3300026: BezierCurve.037
+    3300028: BezierCurve.041
+    3300030: BezierCurve.042
+    3300032: BezierCurve.049
+    3300034: BezierCurve.050
+    3300036: BezierCurve.051
+    3300038: BezierCurve.052
+    3300040: BezierCurve.053
+    3300042: BoatHouse
+    3300044: Central Rope
+    3300046: Circle.000
+    3300048: Circle.001
+    3300050: Circle.002
+    3300052: Circle.003
+    3300054: Circle.004
+    3300056: Circle.029
+    3300058: Circle.030
+    3300060: Circle.034
+    3300062: Circle.035
+    3300064: Circle.036
+    3300066: Circle.037
+    3300068: Circle.038
+    3300070: coke bottle
+    3300072: Cone.000
+    3300074: Cone.001
+    3300076: Cone.002
+    3300078: Cone.004
+    3300080: Cube.000
+    3300082: Cube.003
+    3300084: Cube.004
+    3300086: Cube.005
+    3300088: Cube.009
+    3300090: Cube.010
+    3300092: Cube.011
+    3300094: Cube.012
+    3300096: Cube.013
+    3300098: Cube.015
+    3300100: Cube.016
+    3300102: Cube.017
+    3300104: Cube.018
+    3300106: Cube.019
+    3300108: Cube.020
+    3300110: Cube.021
+    3300112: Cube.048
+    3300114: Cube.065
+    3300116: Cube.067
+    3300118: Cylinder.068
+    3300120: Door
+    3300122: Drum Cylinder
+    3300124: Drum Cylinder.001
+    3300126: Drum Top
+    3300128: Drum Top.001
+    3300130: Mirror.000
+    3300132: Mirror.001
+    3300134: Mirror.002
+    3300136: Mirror.003
+    3300138: Paddles
+    3300140: Piston
+    3300142: Piston.001
+    3300144: Piston.002
+    3300146: Piston.003
+    3300148: Piston.004
+    3300150: Piston.005
+    3300152: Piston.006
+    3300154: Piston.007
+    3300156: Piston.008
+    3300158: Piston.009
+    3300160: Piston.010
+    3300162: Piston.011
+    3300164: Piston.012
+    3300166: Piston.013
+    3300168: Piston.014
+    3300170: Piston.015
+    3300172: Piston.016
+    3300174: Piston.017
+    3300176: Piston.018
+    3300178: Piston.019
+    3300180: Piston.020
+    3300182: Piston.021
+    3300184: Piston.022
+    3300186: Piston.023
+    3300188: Piston.024
+    3300190: Piston.025
+    3300192: Piston.026
+    3300194: Rope on Drum
+    3300196: Rope on drum 5
+    3300198: Rope on drum 5.001
+    3300200: Rope on Drum.001
+    3300202: Rope on Drum2
+    3300204: Rope on Drum2.001
+    3300206: Rope on ship 2
+    3300208: Rope_on_Drum_3
+    3300210: Rope_on_Drum_3.001
+    3300212: Rope_on_Drum_4
+    3300214: Rope_on_Drum_4.001
+    3300216: Rope_Ship_Poole
+    3300218: SeawedCurve.001
+    3300220: SeawedCurve.002
+    3300222: SeawedCurve.003
+    3300224: SeawedCurve.004
+    3300226: SeawedCurve.005
+    3300228: SeawedCurve.006
+    3300230: SeawedCurve.007
+    3300232: SeawedCurve.008
+    3300234: SeawedCurve.009
+    3300236: SeawedCurve.010
+    3300238: SeaWeed.001
+    3300240: SeaWeed.002
+    3300242: SeaWeed.003
+    3300244: SeaWeed.004
+    3300246: SeaWeed.005
+    3300248: SeaWeed.006
+    3300250: SeaWeed.007
+    3300252: SeaWeed.008
+    3300254: SeaWeed.009
+    3300256: SeaWeed.010
+    3300258: Shields
+    3300260: Sleeping Quarters
+    3300262: SpeakerGrill
+    3300264: SpeakerGrill.001
+    3300266: SpeakerGrill.002
+    3300268: SpeakerGrill.003
+    3300270: SpeakerGrill.004
+    3300272: SpeakerGrill.005
+    3300274: Sphere.000
+    3300276: Sphere.001
+    3300278: Sphere.002
+    3300280: Sphere.003
+    3300282: Sphere.004
+    3300284: Sphere.005
+    3300286: Sphere.011
+    3300288: Sphere.020
+    3300290: Sphere.021
+    3300292: Top Boat Box
+    4300000: SeawedCurve.010
+    4300002: SeaWeed.010
+    4300004: SeawedCurve.009
+    4300006: SeaWeed.009
+    4300008: SeawedCurve.008
+    4300010: SeaWeed.008
+    4300012: SeawedCurve.007
+    4300014: SeaWeed.007
+    4300016: SeawedCurve.006
+    4300018: SeaWeed.006
+    4300020: SeawedCurve.005
+    4300022: SeaWeed.005
+    4300024: SeawedCurve.004
+    4300026: SeaWeed.004
+    4300028: SeawedCurve.003
+    4300030: SeaWeed.003
+    4300032: SeawedCurve.002
+    4300034: SeaWeed.002
+    4300036: SeawedCurve.001
+    4300038: SeaWeed.001
+    4300040: Mirror.003
+    4300042: Mirror.002
+    4300044: Mirror.001
+    4300046: Piston.026
+    4300048: BezierCurve.018
+    4300050: Circle.004
+    4300052: Cone.001
+    4300054: BezierCurve.016
+    4300056: Circle.002
+    4300058: BezierCurve.008
+    4300060: Circle.001
+    4300062: Cube.005
+    4300064: Cube.004
+    4300066: Cube.000
+    4300068: Cube.021
+    4300070: Cube.020
+    4300072: Cube.019
+    4300074: Cube.018
+    4300076: Cube.017
+    4300078: Cube.013
+    4300080: Cube.012
+    4300082: Cube.011
+    4300084: Cube.016
+    4300086: Cone.002
+    4300088: Cone.000
+    4300090: Piston.025
+    4300092: Piston.024
+    4300094: Piston.023
+    4300096: Piston.022
+    4300098: Piston.021
+    4300100: Piston.020
+    4300102: Piston.019
+    4300104: Piston.018
+    4300106: Piston.017
+    4300108: Piston.016
+    4300110: Sphere.005
+    4300112: Piston.015
+    4300114: Piston.014
+    4300116: Piston.013
+    4300118: Piston.012
+    4300120: Sphere.004
+    4300122: Piston.011
+    4300124: Piston.010
+    4300126: Piston.009
+    4300128: Piston.008
+    4300130: Piston.007
+    4300132: Sphere.003
+    4300134: Sphere.002
+    4300136: Sphere.001
+    4300138: Sphere.000
+    4300140: Piston.006
+    4300142: Piston.005
+    4300144: Piston.004
+    4300146: Piston.003
+    4300148: Piston.002
+    4300150: Cube.015
+    4300152: Piston.001
+    4300154: Cube.010
+    4300156: Cube.009
+    4300158: Cube.003
+    4300160: SpeakerGrill.005
+    4300162: SpeakerGrill.004
+    4300164: SpeakerGrill.003
+    4300166: SpeakerGrill.002
+    4300168: SpeakerGrill.001
+    4300170: Rope on Drum2.001
+    4300172: BezierCurve.007
+    4300174: Rope_on_Drum_4.001
+    4300176: BezierCurve.006
+    4300178: Rope on Drum.001
+    4300180: BezierCurve.005
+    4300182: Rope on drum 5.001
+    4300184: BezierCurve.004
+    4300186: Rope_on_Drum_3.001
+    4300188: BezierCurve.003
+    4300190: Drum Top.001
+    4300192: Drum Cylinder.001
+    4300194: Cube.067
+    4300196: Paddles
+    4300198: Shields
+    4300200: Top Boat Box
+    4300202: Cube.065
+    4300204: BoatHouse
+    4300206: Cylinder.068
+    4300208: Door
+    4300210: Piston
+    4300212: Sphere.021
+    4300214: Sphere.020
+    4300216: Mirror.000
+    4300218: SpeakerGrill
+    4300220: Drum Cylinder
+    4300222: Drum Top
+    4300224: BezierCurve.053
+    4300226: Rope_on_Drum_3
+    4300228: BezierCurve.052
+    4300230: Rope on drum 5
+    4300232: BezierCurve.051
+    4300234: Rope on Drum
+    4300236: BezierCurve.050
+    4300238: Rope_on_Drum_4
+    4300240: BezierCurve.049
+    4300242: Rope on Drum2
+    4300244: Central Rope
+    4300246: Cube.048
+    4300248: Sphere.011
+    4300250: Sleeping Quarters
+    4300252: BezierCurve.042
+    4300254: Circle.038
+    4300256: Circle.037
+    4300258: Circle.036
+    4300260: Circle.035
+    4300262: BezierCurve.041
+    4300264: Circle.034
+    4300266: BezierCurve.037
+    4300268: Circle.030
+    4300270: Cone.004
+    4300272: BezierCurve.036
+    4300274: Circle.029
+    4300276: BezierCurve.035
+    4300278: Circle.003
+    4300280: BezierCurve.034
+    4300282: Rope on ship 2
+    4300284: BezierCurve.033
+    4300286: Rope_Ship_Poole
+    4300288: coke bottle
+    4300290: BezierCurve.002
+    4300292: Circle.000
+    10800000: Spot
+    10800002: Sun
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

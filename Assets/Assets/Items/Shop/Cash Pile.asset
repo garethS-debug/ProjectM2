@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1ca868b9fde4046a402b76c9c59b71, type: 3}
+  m_Name: Cash Pile
+  m_EditorClassIdentifier: 
+  name: Cash Pile
+  icon: {fileID: 21300000, guid: cdb6e27f82a114188bd9a467367275b7, type: 3}
+  isDefaultItem: 0
+  ItemID: 0
+  isQuestItem: 0
+  questID: 0
+  AddXtoQuest: 0
+  UIMarkerObjective: {fileID: 0}
+  isVaultKey: 0
+  isFoodEvent: 0
+  isMechanicEvent: 0
+  isStaffRota: 0
+  isMainObjective: 0
+  consumableItem: 0
+  consumeHealth: 0
+  ItemGameObj: {fileID: 1739823107390869527, guid: d7c738af4ae974afd91afc7982db27d0,
+    type: 3}
+  isShopItem: 0
+  itemPrice: 0
+  itemDescription: 
+  itemValue: 10
+  isCashPickup: 1
