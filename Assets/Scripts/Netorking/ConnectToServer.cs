@@ -12,13 +12,20 @@ public class ConnectToServer : MonoBehaviourPunCallbacks            //Photon cal
     public TMP_InputField userNameInput;
     public TMP_Text buttonText;
 
-
+    public SceneReference levelToLoad;
 
     [Header("SO")]
     public PlayerSO playerSOData;
 
     [Header("Autoconnect")]
     public GameObject AutoConnectUI;
+
+    public float loadingProgress;
+
+    [Header("Loading Bar")]
+    public Slider slider;
+    public TMP_Text loadingVlaue;
+
 
     public void Awake()
     {
@@ -51,7 +58,24 @@ public class ConnectToServer : MonoBehaviourPunCallbacks            //Photon cal
 
     public override void OnConnectedToMaster()
     {
-        SceneManager.LoadScene("Lobby");                            //Copy to lobby scene. 
+
+
+        StartCoroutine(LoadAsync());
+
+
+    }
+
+    IEnumerator LoadAsync ()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);                            //Copy to lobby scene. 
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            loadingProgress = operation.progress;
+            slider.value = loadingProgress;
+            loadingVlaue.text = progress * 100f + "%";
+            yield return null; //wait for next frame
+        }
     }
 
  

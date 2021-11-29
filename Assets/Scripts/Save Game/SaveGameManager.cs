@@ -50,7 +50,7 @@ public class SaveGameManager : MonoBehaviour
 		LOCK = false;
 
 
-		filePath = Application.persistentDataPath + "/AsteraX.save";
+		filePath = Application.persistentDataPath + "/Journey.save";
 
 		Debug.Log(filePath);
 
@@ -73,6 +73,13 @@ public class SaveGameManager : MonoBehaviour
 
 		//saveFile.StepRecords = AchievementsManager.GetStepRecords();
 		//saveFile.achievements = AchievementsManager.GetAchievements();
+
+		saveFile.slectedCharacter = GameSetup.PlayerCharacter;
+		saveFile.playerName = GameSetup.playerName;
+
+		Debug.Log("Saving.... Selected Character: " + saveFile.slectedCharacter);
+
+
 
 		//-----Saving in json ----//
 		string jsonSaveFile = JsonUtility.ToJson(saveFile, true);                   //Saving to a JASON File
@@ -105,7 +112,8 @@ public class SaveGameManager : MonoBehaviour
 
 			LOCK = true;                                                            //Locking the file
 																					//Load the Achemenents
-																					//AchievementsManager.LoadDataFromSaveFile(saveFile);
+			GameSetup.LoadDataFromSaveFile(saveFile);
+
 
 			LOCK = false;
 
@@ -116,6 +124,8 @@ public class SaveGameManager : MonoBehaviour
 #if DEBUG_VerboseConsoleLogging
 	Debug.Log("SaveGameManager:Load() - unable to find save file);
 #endif
+
+		
 		}
 	}
 
@@ -125,6 +135,22 @@ public class SaveGameManager : MonoBehaviour
 
 	}
 
+	static public bool CheckforSaveGame()
+	{
+		if (File.Exists(filePath))
+		{
+			return true;
+		}
+
+		else
+		{
+			return false;
+		}
+	}
+
+
+
+
 
 
 	[SerializeField]
@@ -133,9 +159,10 @@ public class SaveGameManager : MonoBehaviour
 		//public StepRecord[]	stepRecords;
 		//public Achievement[] achievements;
 
-		public int highScore = 5000;
-		public int slectedBody = 0;
-		public int selectedTurret = 0;
+		//	public int highScore = 5000;
+		public int slectedCharacter = 0;                         // 1 - Paretn 2- Child
+		public string playerName = "";
+		//	public int selectedTurret = 0;
 	}
 
 

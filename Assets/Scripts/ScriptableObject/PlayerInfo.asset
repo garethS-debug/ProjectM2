@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccab7d6eea46ad04ca21c31dd5ebd5ef, type: 3}
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
-  PlayerCharacterChoise: 0
-  PlayerName: 
-  AutoConnect: 0
-  SingleOrMultiPlayer: 0
+  PlayerCharacterChoise: 1
+  PlayerName: Asdas
+  AutoConnect: 1
+  SingleOrMultiPlayer: 1

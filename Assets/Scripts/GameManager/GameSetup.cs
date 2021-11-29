@@ -20,37 +20,55 @@ public class GameSetup : MonoBehaviour
 	public static int PlayerCharacter;
 	public static SaveGameManager.SaveFile playerSaveFile;
 	public static PlayerSO staticPlayerData;
+	public static bool staticexistingSaveGame;
 	public static string playerName;
 
 
 	[Header("UI")]
 	public GameObject selectCharacterUI;
-	public GameObject StartUI;
-	public TMP_InputField GhostNameInput;
-	public TMP_InputField ChildNameInput;
+	public GameObject ContinueUI;
+	public GameObject NewGameUI;
+	//public TMP_InputField GhostNameInput;
+	public TMP_InputField CharacterNameInput;
 
 
 
 	[Header("Scene Ref")]
-	public SceneReference levelToLoad;
-	
-	
+	public SceneReference newGame_levelToLoad;
+	public SceneReference continue_levelToLoad;
+
 	[Header("SO")]
 	public PlayerSO playerSOData;
 
- 
 
 	// Start is called before the first frame update
 	void Start()
     {
 		staticPlayerData = playerSOData;
 
+		/*
+				print("example text in bold".Bold());
+				print("example text in italics".Italic());
+				print("example in Color".Color("red"));
+				print("combine two or more in one".Bold().Color("yellow"));
+				print("size also but be careful".Size(20));
+		*/
 
-		print("example text in bold".Bold());
-		print("example text in italics".Italic());
-		print("example in Color".Color("red"));
-		print("combine two or more in one".Bold().Color("yellow"));
-		print("size also but be careful".Size(20));
+
+		//check for existing game (UI)
+		staticexistingSaveGame = SaveGameManager.CheckforSaveGame();
+			
+		if (staticexistingSaveGame == true)
+        {
+			ContinueUI.SetActive(true);
+
+		}
+
+		else
+        {
+			ContinueUI.SetActive(false);
+		}
+
 	}
 
     // Update is called once per frame
@@ -67,10 +85,14 @@ public class GameSetup : MonoBehaviour
 
 		//print("Selected character number " +  saveFile.slectedCharacter);
 
-		playerSaveFile = saveFile;
-		PlayerCharacter = saveFile.slectedCharacter;
+		if (saveFile!= null)
+        {
+			playerSaveFile = saveFile;
+			PlayerCharacter = saveFile.slectedCharacter;
+		}
 
 		
+
 
 		/*
 		// Handle StepRecords - x1 for loop
@@ -115,30 +137,60 @@ public class GameSetup : MonoBehaviour
 	}
 
 
-	public void SELECT_CHILDCHARACTER()
+	public void SELECT_CHARACTER()
     {
 
 		PlayerCharacter = 1;                                            //Human = 1
 		playerSOData.PlayerCharacterChoise = PlayerCharacter;
 		//Debug.Log("Saving....");
-		playerName = ChildNameInput.text;
+		playerName = CharacterNameInput.text;
 		SaveGameManager.Save();
-		SceneManager.LoadScene(levelToLoad);
+		SceneManager.LoadScene(newGame_levelToLoad);
 	}
 
 
-	public void SELECT_GHOSTCHARACTER()
+	//public void SELECT_GHOSTCHARACTER()
+	//{
+	//	PlayerCharacter = 2;										//Ghost = 2
+	//	playerSOData.PlayerCharacterChoise = PlayerCharacter;
+	//	//Debug.Log("Saving....");
+	//	playerName = GhostNameInput.text;
+	//	SaveGameManager.Save();
+	//	SceneManager.LoadScene(newGame_levelToLoad);
+	//}
+
+
+
+	public void m_NEW_GAME()
 	{
-		PlayerCharacter = 2;										//Ghost = 2
-		playerSOData.PlayerCharacterChoise = PlayerCharacter;
-		//Debug.Log("Saving....");
-		playerName = GhostNameInput.text;
-		SaveGameManager.Save();
-		SceneManager.LoadScene(levelToLoad);
+		bool isSave = SaveGameManager.CheckforSaveGame();
+
+		if (isSave)
+		{
+			//	Debug.Log("Continue to game with your character...");
+			SaveGameManager.Load();
+
+			UpdatePlayerSaveSO(SceneSettings.Instance.connectionType);                      //1 = multiplayer 2 = single player
+
+			SceneManager.LoadScene(newGame_levelToLoad);
+		}
+		else
+		{
+			//	Debug.Log("Choose A Character");
+			selectCharacterUI.SetActive(true);
+			ContinueUI.SetActive(false);
+
+		}
+
 	}
 
 
-	public void m_START_GAME()
+
+
+
+
+
+	public void m_CONTINUE_GAME()
     {
 	 bool isSave =	SaveGameManager.CheckforSaveGame();
 
@@ -147,41 +199,22 @@ public class GameSetup : MonoBehaviour
 		//	Debug.Log("Continue to game with your character...");
 			SaveGameManager.Load();
 
-			UpdatePlayerSaveSO(1);						//1 = multiplayer
+			UpdatePlayerSaveSO(1);                   //1 = multiplayer 2 = single player
 
-			SceneManager.LoadScene(levelToLoad);
+			SceneManager.LoadScene(continue_levelToLoad);
 		}
 	else
         {
 		//	Debug.Log("Choose A Character");
 			selectCharacterUI.SetActive(true);
-			StartUI.SetActive(false);
+			ContinueUI.SetActive(false);
 
 		}
 
 	}
 
 
-	public void s_START_GAME()
-	{
-		bool isSave = SaveGameManager.CheckforSaveGame();
 
-		if (isSave)
-		{
-			//	Debug.Log("Continue to game with your character...");
-			SaveGameManager.Load();
-			UpdatePlayerSaveSO(2);                  //2 = Single Player
-			SceneManager.LoadScene(levelToLoad);
-		}
-		else
-		{
-			//	Debug.Log("Choose A Character");
-			selectCharacterUI.SetActive(true);
-			StartUI.SetActive(false);
-
-		}
-
-	}
 
 
 

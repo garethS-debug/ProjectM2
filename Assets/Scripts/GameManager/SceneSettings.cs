@@ -20,13 +20,10 @@ public class SceneSettings : MonoBehaviourPunCallbacks
 
     [Header("Game Mode ")]
     public bool isSinglePlayer;
-
     public bool isMultiPlayer;
-
+    public int connectionType;
 
     [Header(" players ")]
-
-
     public GameObject humanPlayer;
     public GameObject ghostPlayer;
     public float playerdistance;
@@ -58,6 +55,7 @@ public class SceneSettings : MonoBehaviourPunCallbacks
                 // 1 = multiplayer
                 //2 = single player
                 isMultiPlayer = true;
+                connectionType = 1;
                 isSinglePlayer = false;
 
             }
@@ -65,6 +63,7 @@ public class SceneSettings : MonoBehaviourPunCallbacks
             else if (playerSOData.SingleOrMultiPlayer == 2)
             {
                 isSinglePlayer = true;
+                connectionType = 2;
                 isMultiPlayer = false;
             }
 
