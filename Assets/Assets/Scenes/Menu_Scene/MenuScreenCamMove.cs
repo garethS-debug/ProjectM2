@@ -44,7 +44,7 @@ public class MenuScreenCamMove : MonoBehaviour
             rotationSpeed = Mathf.Abs(rotationSpeed);
         }
 
-        print(transform.rotation.eulerAngles.y);
+     //   print(transform.rotation.eulerAngles.y);
 
         //    transform.localEulerAngles = new Vector3(Mathf.Clamp(Camera.main.transform.localEulerAngles.x, -viewRange, viewRange), 0, 0);
 
