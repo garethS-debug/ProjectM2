@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ItemPickUpText
+  - AcceptButton
+  - CompleteButton
+  - GiveUpButton
+  - PlayerWeapon
+  - NPC
+  - EnemyWeapon
+  - Enemy
+  - Item
+  - Ship
+  - Water Volume
+  - TopLadder
+  - BottomLadder
+  - Ground
+  - Waypoint
+  - CamFollow
+  - SleepingEnemy
+  - PickUpOBJ
+  - Distraction
+  - BackPack
+  - PlayerPickup
+  - Stairs
+  - Staff
+  - PatrolPoint
+  - AlarmBox
+  - Civilian
+  - Crime
+  - Police
+  - InventoryItem
+  - Door
+  - ObjectOfInterest
+  - PickupBody
+  - HideBody
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Enemy
+  - Obsticle
+  - NPC
+  - Player
+  - Waypoint
+  - Enviroment
+  - Distraction
+  - Staff
+  - Civilian
+  - Foreground
+  - Background
+  - Crime
+  - Interactions
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3984133397
+    locked: 0
