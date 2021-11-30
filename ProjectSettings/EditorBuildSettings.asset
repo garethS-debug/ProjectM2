@@ -30,10 +30,10 @@ EditorBuildSettings:
     path: Assets/Assets/Scenes/Bank_Level_1/Bank_Level_1/Main Level Scene/Bank_Main_Level.unity
     guid: 6c22aa400436946cc8c23fb9b6d80483
   - enabled: 1
-    path: Assets/Assets/Scenes/Tutorial/Tutorial 1.unity
+    path: Assets/Scenes/Levels/Tutorial/Tutorial 1.unity
     guid: cc24eb040cacb734494959cf665c6b95
   - enabled: 0
-    path: Assets/Assets/Scenes/Tutorial/Tutorial 2.unity
+    path: Assets/Assets/Scenes/Tutorial/Tutorial X.unity
     guid: 704ca433ebc126e448aa517e96383700
   - enabled: 1
     path: Assets/Scenes/ConnectToServer.unity

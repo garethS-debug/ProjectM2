@@ -19,12 +19,13 @@ public class ConnectToServer : MonoBehaviourPunCallbacks            //Photon cal
 
     [Header("Autoconnect")]
     public GameObject AutoConnectUI;
-
+    public GameObject manualLogin;
     public float loadingProgress;
 
     [Header("Loading Bar")]
     public Slider slider;
     public TMP_Text loadingVlaue;
+
 
 
     public void Awake()
@@ -37,12 +38,13 @@ public class ConnectToServer : MonoBehaviourPunCallbacks            //Photon cal
             buttonText.text = "Connecting....";
             PhotonNetwork.AutomaticallySyncScene = true;            //Client scene can be changed by master 
             PhotonNetwork.ConnectUsingSettings();                   //Connect to Photon server
-
+            manualLogin.gameObject.SetActive(false);
         }
 
         else
         {
             AutoConnectUI.SetActive(false);
+            manualLogin.gameObject.SetActive(true);
         }
     }
     public void OnClickConnect()
