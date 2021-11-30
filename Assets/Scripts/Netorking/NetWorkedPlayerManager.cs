@@ -33,25 +33,17 @@ public class NetWorkedPlayerManager : MonoBehaviour
         }
 
 
-        if (SceneSettings.Instance.isSinglePlayer == true)
-        {
-            SceneSettings.Instance.RemoveMultiplayerScript(this.gameObject);
-        }
-
-
-        if (SceneSettings.Instance.isMultiPlayer == true)
-        {
-            PV = GetComponent<PhotonView>();
-        }
-
-        
+   
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (SceneSettings.Instance == null)
+        {
+            Debug.Log("Scene settings instance null".Bold().Color("red"));
+        }
 
         if (SceneSettings.Instance.isMultiPlayer == true)
         {
@@ -63,23 +55,8 @@ public class NetWorkedPlayerManager : MonoBehaviour
             //{
 
             //}
-        }
 
 
-
-
-
-        if (SceneSettings.Instance.isSinglePlayer == true)
-        {
-            if (spawnPoints.Count > 0)
-            {
-                s_CreateController();
-            }
-        }
-
-
-        if (SceneSettings.Instance.isMultiPlayer == true)
-        {
             if (PV.IsMine) // if owned by local players
             {
                 if (spawnPoints.Count > 0)
@@ -89,6 +66,33 @@ public class NetWorkedPlayerManager : MonoBehaviour
 
             }
         }
+
+
+
+
+        if (SceneSettings.Instance.isSinglePlayer == true)
+        {
+            SceneSettings.Instance.RemoveMultiplayerScript(this.gameObject);
+            Debug.Log("Game Is Single Player : Removing Multiplayer Script ".Bold().Color("white"));
+            if (spawnPoints.Count > 0)
+            {
+                s_CreateController();
+                Debug.Log("Game Is Single Player : Spawn Points are move than 0 ".Bold().Color("white"));
+            }
+
+            if (spawnPoints.Count <= 0)
+            {
+                Debug.Log("not enough spawn points ".Bold().Color("red"));
+            }
+            }
+
+
+        if (SceneSettings.Instance.isMultiPlayer == true)
+        {
+            PV = GetComponent<PhotonView>();
+        }
+
+
 
 
     }
@@ -104,13 +108,16 @@ public class NetWorkedPlayerManager : MonoBehaviour
         int randomNumber = Random.Range(0, spawnPoints.Count);
         Transform spawnPoint = spawnPoints[randomNumber].transform;
         GameObject playerToSpawn = playerPrefabs[(int)PhotonNetwork.LocalPlayer.CustomProperties["playerAvatar"]];
+        
         Debug.Log("Cretated Player Controller " + playerToSpawn.name);
 
-        Debug.Log("Im located on " + this.gameObject);
         //  PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), Vector3.zero, Quaternion.identity);
-
+     
             playerInScene = PhotonNetwork.Instantiate(playerToSpawn.name, spawnPoint.position, Quaternion.identity);
-        
+
+            playerInScene.gameObject.SetActive(true);
+
+            Debug.Log("Im  " + playerInScene.gameObject.name + " " );
     }
 
     void s_CreateController()
@@ -118,11 +125,15 @@ public class NetWorkedPlayerManager : MonoBehaviour
         
             int randomNumber = Random.Range(0, spawnPoints.Count);
             Transform spawnPoint = spawnPoints[randomNumber].transform;
-            
+        
+        Debug.Log("Cretating Player Controller:  " + playerPrefabs[playerSavedData.PlayerCharacterChoise]);
+        Debug.Log("Spawn Points: " + spawnPoint);
+
+
         //Access Save File 
-            GameObject playerToSpawn = playerPrefabs[playerSavedData.PlayerCharacterChoise];
+        GameObject playerToSpawn = playerPrefabs[playerSavedData.PlayerCharacterChoise];
            
-        Debug.Log("Cretated Player Controller " + playerToSpawn.name);
+      
 
 
             if (SceneSettings.Instance.isSinglePlayer == true)

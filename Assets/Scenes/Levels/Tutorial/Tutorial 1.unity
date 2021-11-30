@@ -22913,8 +22913,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSOData: {fileID: 11400000, guid: 556b2b217ec09984b97ba2d9f51d6366, type: 2}
-  isSinglePlayer: 0
-  isMultiPlayer: 1
+  isSinglePlayer: 1
+  isMultiPlayer: 0
   connectionType: 0
   humanPlayer: {fileID: 0}
   ghostPlayer: {fileID: 0}

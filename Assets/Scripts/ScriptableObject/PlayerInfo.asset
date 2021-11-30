@@ -15,4 +15,4 @@ MonoBehaviour:
   PlayerCharacterChoise: 1
   PlayerName: Asdas
   AutoConnect: 1
-  SingleOrMultiPlayer: 1
+  SingleOrMultiPlayer: 2

@@ -15,8 +15,9 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
 
     [Header("Single PLayer Instnace")]
-  [HideInInspector]  public GameObject S_PlayerInstance;
     public GameObject s_PlayerManager;
+    [HideInInspector]  public GameObject S_PlayerInstance;
+  
 
 
 
@@ -101,10 +102,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
         if (sceneSettings.isMultiPlayer == true)
         {
             networkedPlayerManager = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
+            
+            
+            
             Debug.Log("Game Is Multiplayer : ".Bold().Color("green"));
         }
 
-        else
+        else if (sceneSettings.isSinglePlayer == true)
         {
             Debug.Log("Game Is Single Player : ".Bold().Color("white"));
             s_CreatePlayer();
@@ -122,7 +126,17 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
    
         print("Creating Player : ".Color("Green"));
-        S_PlayerInstance = Instantiate(s_PlayerManager, Vector3.zero, Quaternion.identity);
+
+        if (s_PlayerManager != null)
+        {
+            S_PlayerInstance = Instantiate(s_PlayerManager, Vector3.zero, Quaternion.identity);
+            Debug.Log("single player instantiate: s_PlayerManager".Bold().Color("green"));
+        }
+
+        if (s_PlayerManager == null)
+        {
+            Debug.Log("s_PlayerManager s null: ".Bold().Color("red"));
+        }
         // networkedPlayer.gameObject.GetComponent<NetworkedPlayerController>().isInLobby = false
 
         //griefBar.CreateDisplay();

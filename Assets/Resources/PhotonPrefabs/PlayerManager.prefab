@@ -68,6 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefabs:
   - {fileID: 4400524498374791723, guid: 9ca0042affa389943b3bb11a661b11c3, type: 3}
+  - {fileID: 4400524498374791723, guid: 9ca0042affa389943b3bb11a661b11c3, type: 3}
+  - {fileID: 4400524498374791723, guid: 9ca0042affa389943b3bb11a661b11c3, type: 3}
   spawnPoints: []
   playerInScene: {fileID: 0}
   playerSavedData: {fileID: 11400000, guid: 556b2b217ec09984b97ba2d9f51d6366, type: 2}
