@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using Steamworks;
 public class GameSetup : MonoBehaviour
 {
 
@@ -146,23 +146,15 @@ public class GameSetup : MonoBehaviour
 		playerName = CharacterNameInput.text;
 		SaveGameManager.Save();
 		SceneManager.LoadScene(newGame_levelToLoad);
+
+		//TO DO -------- ADD TUTORIAL REQUIREMENT TO SCRIPTABLE OBJ
 	}
-
-
-	//public void SELECT_GHOSTCHARACTER()
-	//{
-	//	PlayerCharacter = 2;										//Ghost = 2
-	//	playerSOData.PlayerCharacterChoise = PlayerCharacter;
-	//	//Debug.Log("Saving....");
-	//	playerName = GhostNameInput.text;
-	//	SaveGameManager.Save();
-	//	SceneManager.LoadScene(newGame_levelToLoad);
-	//}
 
 
 
 	public void m_NEW_GAME()
 	{
+		/*
 		bool isSave = SaveGameManager.CheckforSaveGame();
 
 		if (isSave)
@@ -171,9 +163,28 @@ public class GameSetup : MonoBehaviour
 			SaveGameManager.Load();
 
 			UpdatePlayerSaveSO(SceneSettings.Instance.connectionType);                      //1 = multiplayer 2 = single player
-
 			SceneManager.LoadScene(newGame_levelToLoad);
 		}
+
+		*/
+
+		if (SteamManager.Initialized)
+        {
+			string name = SteamFriends.GetPersonaName(); // Get your name as a string
+			Debug.Log("Steam Set up and grabbing name : ".Bold().Color("green") + name);
+
+			PlayerCharacter = 1;                                            //Human = 1
+			playerSOData.PlayerCharacterChoise = PlayerCharacter;
+			//Debug.Log("Saving....");
+			playerName = name;
+			SaveGameManager.Save();
+			SceneManager.LoadScene(newGame_levelToLoad);
+
+
+			//TO DO -------- ADD TUTORIAL REQUIREMENT TO SCRIPTABLE OBJ
+		}
+
+
 		else
 		{
 			//	Debug.Log("Choose A Character");
