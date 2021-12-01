@@ -78,11 +78,31 @@ public class murphyPlayerController : MonoBehaviour
 	void Start()
 	{
 
+		if (SceneSettings.Instance == null)
+		{
+			Debug.Log("Scene settings null".Bold().Color("red"));
+		}
+
+
+
 
 		if (SceneSettings.Instance.isMultiPlayer == true)
 		{
 			//Photon
 			PV = GetComponent<PhotonView>();
+
+
+			if (PV == null)
+			{
+				Debug.Log("PV not mine Player controller".Bold().Color("red"));
+			}
+
+
+			if (PV.IsMine == false)
+			{
+				Debug.Log("PV not mine Player controller".Bold().Color("red"));
+			}
+
 
 
 			//If multiplayer and not my game object
@@ -157,7 +177,7 @@ public class murphyPlayerController : MonoBehaviour
 	void FixedUpdate()
 	{
 
-	
+
 
 
 

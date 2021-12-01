@@ -56,12 +56,36 @@ public class NetWorkedPlayerManager : MonoBehaviour
 
             //}
 
+        
+                //Photon
+                PV = GetComponent<PhotonView>();
+          
+
+
+            if (PV == null)
+            {
+                Debug.Log("PV not mine".Bold().Color("red"));
+            }
+
+
+            if (PV.IsMine == false)
+            {
+                Debug.Log("PV not also not".Bold().Color("red"));
+            }
+
 
             if (PV.IsMine) // if owned by local players
             {
+                Debug.Log("PV is mine ");
                 if (spawnPoints.Count > 0)
                 {
+                    Debug.Log("Spawn points more than 0".Bold().Color("green"));
                     m_CreateController();
+                }
+
+                else if (spawnPoints.Count <= 0 )
+                {
+                    Debug.Log("Spawn points less than 0".Bold().Color("red"));
                 }
 
             }
