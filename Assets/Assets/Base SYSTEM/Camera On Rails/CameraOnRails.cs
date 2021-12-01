@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraOnRails : MonoBehaviour
 {
-    public Transform player;
+   [HideInInspector] public Transform player;
     public Vector3 offset;
  //   public Vector3 followoffset;
 
@@ -24,6 +24,9 @@ public class CameraOnRails : MonoBehaviour
     private Quaternion _targetRotation = Quaternion.identity;
     // Call this when you want to turn the object smoothly.
    public Vector3 vector3Reset;
+
+    public Vector3 vector3ResetDEBUG;
+
     public float snapBackDistance;
 
 
@@ -47,6 +50,9 @@ public class CameraOnRails : MonoBehaviour
 
     void Update ()
     {
+        SetBlendedEulerAngles( vector3ResetDEBUG);
+
+
         // Vector3 position = transform.position;
         // position.y = (player.position + offset).y;
         // transform.position = position;

@@ -5505,13 +5505,13 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4400524498626370496}
   serializedVersion: 7
-  lengthInSec: 0.5
+  lengthInSec: 0.18
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 0
+  looping: 1
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -5633,7 +5633,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6769,7 +6769,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0.9823529}
+        key1: {r: 1, g: 1, b: 1, a: 0.017647088}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -6785,7 +6785,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 29876
+        atime1: 38165
         atime2: 65535
         atime3: 65535
         atime4: 0
@@ -10236,7 +10236,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fc770345e8085450d90c5fe6e73390fc, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10686,9 +10685,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6057140222963153312, guid: 43d1f094466034d73977fa45eba9dc26,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 43d1f094466034d73977fa45eba9dc26,
+        type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7dbc1d4c89b5a4976af3ad9f9b89aa3f, type: 2}
+      objectReference: {fileID: 9100000, guid: b169179b11f876d46b0faf04871c6962, type: 2}
     - target: {fileID: -5019408267123992681, guid: 43d1f094466034d73977fa45eba9dc26,
         type: 3}
       propertyPath: m_TagString
@@ -11037,6 +11041,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac40e542c28cf2548a29d97d5fe82146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  DampTime: 1.1
+  turning: 0
+  rotSpeed: 5
+  speed: 5
+  sneakHash: 0
+  againstWallHash: 0
+  Dust: {fileID: 4400524498626370527}
+  camPrefab: {fileID: 8722063397873454114, guid: 70a1340ad9624e44e87b7716f66b2fd4,
+    type: 3}
 --- !u!114 &4400524497088550548
 MonoBehaviour:
   m_ObjectHideFlags: 0
