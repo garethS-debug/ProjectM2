@@ -100,19 +100,28 @@ public class SteamLobbyManager : MonoBehaviour
     }
 
 
+  
+
+
 
     private void OnLobbyEntered(LobbyEnter_t callback)
     {
         //check if this is the host talking 
        // if (NetworkServer.active) { return; } //exclude host
-       if (lobbyManager.CheckIfHost() == true) { return; }
+       if (lobbyManager.CheckIfHost() == true) 
+       {
+            Debug.Log("I am the host - Onlobbyentered not run".Bold().Color("orange"));
+
+            return; 
+        
+        }
 
 
         //if client
         string hostAddress = SteamMatchmaking.GetLobbyData(new CSteamID(callback.m_ulSteamIDLobby), HostAddressKey);
 
-        //  networkManager.networkAddress = hostAddress;
-        //  networkManager.StartClient();
+                                                                                            //  networkManager.networkAddress = hostAddress;
+                                                                                            //  networkManager.StartClient();
 
         Debug.Log("Lobby has been entered".Bold().Color("green"));
 
