@@ -69,7 +69,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private void OnEnable()
     {
-        Debug.Log("OnEnabled Called");
+//        Debug.Log("OnEnabled Called");
        // base.OnEnable();
         SceneManager.sceneLoaded += OnSceneLoaded;      //Works on Claire's but not on 
 
@@ -79,7 +79,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     private void OnDisable()
     {
-        Debug.Log("OnDisabledd Called");
+      //  Debug.Log("OnDisabledd Called");
         //  base.OnDisable();
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }

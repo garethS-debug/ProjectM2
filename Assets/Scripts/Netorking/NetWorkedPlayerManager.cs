@@ -141,28 +141,35 @@ public class NetWorkedPlayerManager : MonoBehaviour
 
             playerInScene.gameObject.SetActive(true);
 
-            Debug.Log("Im  " + playerInScene.gameObject.name + " " );
+   
+            SceneSettings.Instance.humanPlayer = playerInScene;
+            SceneSettings.Instance.humanPlayers.Add(playerInScene);
+
+       Debug.Log("Im  " + playerInScene.gameObject.name + " " + "Adding to  " + SceneSettings.Instance.humanPlayer);
+
+
     }
 
     void s_CreateController()
     {
-        
-            int randomNumber = Random.Range(0, spawnPoints.Count);
-            Transform spawnPoint = spawnPoints[randomNumber].transform;
-        
+
+        int randomNumber = Random.Range(0, spawnPoints.Count);
+        Transform spawnPoint = spawnPoints[randomNumber].transform;
+
         Debug.Log("Cretating Player Controller:  " + playerPrefabs[playerSavedData.PlayerCharacterChoise]);
         Debug.Log("Spawn Points: " + spawnPoint);
 
 
         //Access Save File 
         GameObject playerToSpawn = playerPrefabs[playerSavedData.PlayerCharacterChoise];
-           
-      
 
 
-            if (SceneSettings.Instance.isSinglePlayer == true)
-     
-                playerInScene = Instantiate(playerToSpawn, spawnPoint.position, spawnPoint.rotation);
- 
+
+
+
+        playerInScene = Instantiate(playerToSpawn, spawnPoint.position, spawnPoint.rotation);
+        SceneSettings.Instance.humanPlayer = playerInScene;
+        Debug.Log("Im  " + playerInScene.gameObject.name + " " + "Adding to  " + SceneSettings.Instance.humanPlayer);
+
     }
 }

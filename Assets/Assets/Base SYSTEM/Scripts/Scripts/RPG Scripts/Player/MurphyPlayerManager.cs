@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour {
+public class MurphyPlayerManager : MonoBehaviour {
 
-    public static PlayerManager Instance { get; set; }
+    public static MurphyPlayerManager Instance { get; set; }
 
     #region Singleton
 
-    public static PlayerManager instance;
+    public static MurphyPlayerManager instance;
+
+    [Header("Scenesettings")]
+    public SceneSettings sceneSettings;
 
 
     [Header("Ragdoll")]
@@ -50,13 +53,37 @@ public class PlayerManager : MonoBehaviour {
         else if (Instance != this)
         {
             Debug.LogError("Mroe than one player manager");
+            Destroy(this.gameObject);
         }
 
-        PlayerStats = player.gameObject.GetComponent<PlayerStats>();
 
-        playerRagdoll.SetActive(false);
-       
-        rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
+ 
+
+        if (SceneSettings.Instance.isSinglePlayer)
+        {
+            Debug.LogError("Adding Player from SceneSettings");
+            player = sceneSettings.humanPlayer;
+            Debug.LogError("Adding Player from SceneSettings");
+
+            PlayerStats = player.gameObject.GetComponent<PlayerStats>();
+
+            playerRagdoll.SetActive(false);
+
+            rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
+
+        }
+        if (SceneSettings.Instance.isMultiPlayer)
+        {
+
+            PlayerStats = player.gameObject.GetComponent<PlayerStats>();
+
+            playerRagdoll.SetActive(false);
+
+            rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
+
+
+        }
+
     }
 
     //Return to normal time after bullettime 

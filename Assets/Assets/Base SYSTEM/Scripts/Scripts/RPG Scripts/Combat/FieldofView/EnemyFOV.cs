@@ -113,6 +113,7 @@ public class EnemyFOV : MonoBehaviour
     public List<Vector3> LastKnownFOVLOC = new List<Vector3>();
     public Vector3 LastKnownFOVLocation;
     public Transform LastKnowLOCTransform;
+    private Transform nearestPLayer;
     public  float playerPOS;
 
 
@@ -135,14 +136,8 @@ public class EnemyFOV : MonoBehaviour
                                                     //anim.SetInteger("atk", 0);
 
         checkTheCostume = false;
-
-
-       // StartCoroutine("LookingOutForTargets", .2f); //start looking for targets
-
        
         equipmentManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<EquipmentManager>();
-
-        //  attackRange = chase.attackRange;
 
         //Mesh View
         viewMesh = new Mesh();
@@ -176,7 +171,21 @@ public class EnemyFOV : MonoBehaviour
             LastKnownFOVLOC.RemoveRange(0, 2);
         }
 
-         playerPOS = Vector3.Distance(PlayerManager.instance.player.transform.position, this.transform.position);
+        //playerPOS = Vector3.Distance(MurphyPlayerManager.instance.player.transform.position, this.transform.position);
+      
+            nearestPLayer = GetClosestEnemy(SceneSettings.Instance.humanPlayers, this.gameObject.transform);
+
+            if (SceneSettings.Instance.humanPlayers == null)
+        {
+            Debug.Log("Human Players missings");
+        }
+
+        if (this.gameObject.transform == null)
+        {
+            Debug.Log("This is null");
+        }
+        playerPOS = Vector3.Distance(nearestPLayer.position, this.transform.position);
+
     }
     private void LateUpdate()
     {
@@ -587,6 +596,23 @@ public class EnemyFOV : MonoBehaviour
         }
     }
 
-
+    Transform GetClosestEnemy(List<GameObject> enemies, Transform fromThis)
+    {
+        Transform bestTarget = null;
+        float closestDistanceSqr = Mathf.Infinity;
+        Vector3 currentPosition = fromThis.position;
+        foreach (GameObject potentialTarget in enemies)
+        {
+            Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+            float dSqrToTarget = directionToTarget.sqrMagnitude;
+            if (dSqrToTarget < closestDistanceSqr)
+            {
+                closestDistanceSqr = dSqrToTarget;
+                bestTarget = potentialTarget.transform;
+            }
+        }
+        print("Best target = " + bestTarget);
+        return bestTarget;
+    }
 }
 

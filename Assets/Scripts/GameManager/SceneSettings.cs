@@ -25,10 +25,13 @@ public class SceneSettings : MonoBehaviourPunCallbacks
 
     [Header(" players ")]
     public GameObject humanPlayer;
-    public GameObject ghostPlayer;
     public float playerdistance;
+    public List<GameObject> humanPlayers = new List<GameObject>();
 
 
+    [Header(" Steam ")]
+    public GameObject steamSettings;
+    public bool enableSteamSetttings;
 
     [Header(" Scenes ")]
     public SceneReference NextScene;
@@ -74,6 +77,17 @@ public class SceneSettings : MonoBehaviourPunCallbacks
                 Debug.LogError("SceneSettings : Set bool to either single or multiplayer");
             }
         }
+
+        if (enableSteamSetttings)
+        {
+            steamSettings.gameObject.SetActive(true);
+        }
+
+        else if (enableSteamSetttings == false) 
+        {
+            steamSettings.gameObject.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
@@ -128,6 +142,8 @@ public class SceneSettings : MonoBehaviourPunCallbacks
             yield return null;
         SceneManager.LoadScene(NextScene);
     }
+
+
 
 
 }

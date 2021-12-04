@@ -71,7 +71,7 @@ public class StateController : MonoBehaviour
     [HideInInspector] public float StartCooldowWaitTime;
 
     [Header("NavMesh")]
-    [HideInInspector] public NavMeshAgent _navMeshAgent;
+   public NavMeshAgent _navMeshAgent;
    public bool resetPath;
 
     [Header("FOV")]
@@ -159,7 +159,11 @@ public class StateController : MonoBehaviour
         resetPath = false;
         CharacterStats = this.gameObject.GetComponent<CharacterStats>();
         randomSpot = Random.Range(0, moveLocations.Count);
-        _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
+
+       
+       // _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
+
+
         if (this.gameObject.tag == "Enemy")
         {
             enemyFOV = gameObject.GetComponent<EnemyFOV>();
@@ -191,7 +195,7 @@ public class StateController : MonoBehaviour
 
         AtkCoolDownTimerMax = AtkCoolDownTimer;
 
-        mainCharacher = PlayerManager.instance.player;
+        mainCharacher = MurphyPlayerManager.instance.player;
     }
 
     // Update is called once per frame
@@ -525,7 +529,7 @@ public class StateController : MonoBehaviour
     #region Attacking
     public void Attack()
     {
-        transform.LookAt(PlayerManager.instance.player.transform);
+        transform.LookAt(MurphyPlayerManager.instance.player.transform);
 
         WaitAfterAttack();
 

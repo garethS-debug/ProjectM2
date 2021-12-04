@@ -106,7 +106,7 @@ public class CivilianPatrol : MonoBehaviour
 
     void Start()
     {
-        player = PlayerManager.instance.player; 
+        player = MurphyPlayerManager.instance.player; 
         randomSpot = Random.Range(0, moveLocations.Count);
 
         civilianAIController = gameObject.GetComponent<CivilianAI>();

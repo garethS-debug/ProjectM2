@@ -112,6 +112,21 @@ public class Objective : MonoBehaviour
     void Start()
     {
 
+        if (player == null)
+        {
+            if (SceneSettings.Instance.humanPlayer != null)
+            {
+                player = SceneSettings.Instance.humanPlayer;
+             //   break;
+            }
+
+            if (SceneSettings.Instance.humanPlayer == null)
+            {
+                Debug.Log("Human player not available");
+            }
+           // break;
+         }
+     
 
         //foreach (GameObject moneyBag in MoneyBags)
         //{

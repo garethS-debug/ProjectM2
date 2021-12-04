@@ -59,7 +59,7 @@ public class Sitting : MonoBehaviour
     
       //  SitCam.SetActive(false);
 
-        player = PlayerManager.instance.player.transform;
+        player = MurphyPlayerManager.instance.player.transform;
         interactionTransform = this.gameObject.transform;
         PickUpTextBox = GameObject.FindGameObjectWithTag("ItemPickUpText");
         cameraOnRails = TheCamera.gameObject.GetComponent<CameraOnRails>();

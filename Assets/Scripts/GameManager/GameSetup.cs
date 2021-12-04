@@ -167,22 +167,32 @@ public class GameSetup : MonoBehaviour
 		}
 
 		*/
+		if (SceneSettings.Instance.enableSteamSetttings == true)
+		{
 
-		if (SteamManager.Initialized)
-        {
-			string name = SteamFriends.GetPersonaName(); // Get your name as a string
-			Debug.Log("Steam Set up and grabbing name : ".Bold().Color("green") + name);
+			if (SteamManager.Initialized)
+			{
+				string name = SteamFriends.GetPersonaName(); // Get your name as a string
+				Debug.Log("Steam Set up and grabbing name : ".Bold().Color("green") + name);
 
-			PlayerCharacter = 1;                                            //Human = 1
-			playerSOData.PlayerCharacterChoise = PlayerCharacter;
-			//Debug.Log("Saving....");
-			playerName = name;
-			SaveGameManager.Save();
-			SceneManager.LoadScene(newGame_levelToLoad);
+				PlayerCharacter = 1;                                            //Human = 1
+				playerSOData.PlayerCharacterChoise = PlayerCharacter;
+				//Debug.Log("Saving....");
+				playerName = name;
+				SaveGameManager.Save();
+				SceneManager.LoadScene(newGame_levelToLoad);
 
 
-			//TO DO -------- ADD TUTORIAL REQUIREMENT TO SCRIPTABLE OBJ
+				//TO DO -------- ADD TUTORIAL REQUIREMENT TO SCRIPTABLE OBJ
+			}
+
+
+
+
 		}
+
+
+
 
 
 		else

@@ -37,11 +37,10 @@ public class EnemyWeaponScript : MonoBehaviour
         {
             damage = theEnemy.gameObject.GetComponent<CharacterStats>().damage.GetValue();
         }
-       
-        ThePlayer = PlayerManager.instance.player.GetComponent<CharacterStats>();
+      
         chase = theEnemy.gameObject.GetComponent<Chase>();
         enemyAnim = this.gameObject.GetComponent<Animator>();
-        combat = PlayerManager.instance.player.gameObject.GetComponent<Combat>();
+       
        // HitCounter = combat.HitCounter;
 
     }
@@ -82,6 +81,8 @@ public class EnemyWeaponScript : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
+            combat = collision.gameObject.GetComponent<Combat>();
+            ThePlayer = collision.GetComponent<CharacterStats>();
             Debug.Log("MAIN CHARACTER HIT BY" + this.gameObject.transform.name);
             anim = collision.gameObject.GetComponent<Animator>();
             StartCoroutine("Damage");

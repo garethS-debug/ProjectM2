@@ -354,6 +354,8 @@ MonoBehaviour:
   humanPlayer: {fileID: 0}
   ghostPlayer: {fileID: 0}
   playerdistance: 0
+  steamSettings: {fileID: 1855890030}
+  enableSteamSetttings: 0
   NextScene:
     sceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
     scenePath: Assets/Scenes/ConnectToServer.unity
@@ -2819,6 +2821,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SteamManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7656299024298066173, guid: 7939a41c9585c3749b4700ea4c800576,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7656299024298066175, guid: 7939a41c9585c3749b4700ea4c800576,
         type: 3}
       propertyPath: m_RootOrder
@@ -3528,6 +3535,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820994564}
   m_CullTransparentMesh: 0
+--- !u!1 &1855890030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656299024298066173, guid: 7939a41c9585c3749b4700ea4c800576,
+    type: 3}
+  m_PrefabInstance: {fileID: 1536175585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1884348049
 GameObject:
   m_ObjectHideFlags: 0

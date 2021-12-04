@@ -123,7 +123,7 @@ public class PolicePatrol : MonoBehaviour
 
         //randomSearchSpot = Random.Range(0, searchingTheAreaLOC.Count);
 
-        player = PlayerManager.instance.player;
+        player = MurphyPlayerManager.instance.player;
 
         enemyAIController = gameObject.GetComponent<PoliceAI>();
         enemyFOV = gameObject.GetComponent<PoliceFOV>();

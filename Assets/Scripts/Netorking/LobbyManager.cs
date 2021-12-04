@@ -117,9 +117,14 @@ public class LobbyManager : MonoBehaviourPunCallbacks
             //create room with photon
             CreateRoom(roomInputField.text, maxPlayerCount, passwordField.text);
 
+            if (SceneSettings.Instance.enableSteamSetttings == true)
+            {
 
-            //create room with steam  -- TO DO ADD ROOM TYPE
-            steamLobbyManager.steam_HostLobby(ELobbyType.k_ELobbyTypePublic, maxPlayerCount);
+
+                //create room with steam  -- TO DO ADD ROOM TYPE
+                steamLobbyManager.steam_HostLobby(ELobbyType.k_ELobbyTypePublic, maxPlayerCount);
+            }
+
 
         }
 

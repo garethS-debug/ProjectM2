@@ -18,6 +18,9 @@ public class AttackCloseProximity : Decision
     private bool Look(StateController controller)
     {
 
+        //--- > foreach loop of every human player in scene
+ 
+
         if (controller.enemyFOV.playerPOS <= controller.enemyFOV.attackRange && controller.enemyFOV.inPeriphVision == true)
 
 
@@ -42,4 +45,6 @@ public class AttackCloseProximity : Decision
 
 
     }
+
+    
 }

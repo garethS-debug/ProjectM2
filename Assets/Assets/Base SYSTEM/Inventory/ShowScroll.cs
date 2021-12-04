@@ -89,7 +89,7 @@ public class ShowScroll : MonoBehaviour
         // ScrollBarAnimator.SetTrigger("ShowScroll");
         //  StartCoroutine(Show());
 
-        PlayerManager.instance.player.gameObject.GetComponent<NewMurphyMovement>().enabled = false;
+        MurphyPlayerManager.instance.player.gameObject.GetComponent<NewMurphyMovement>().enabled = false;
     }
 
 
@@ -143,7 +143,7 @@ public class ShowScroll : MonoBehaviour
         disableHealth.SetActive(true);
        // disableNoise.SetActive(true);
         ScrollBarContainerObj.SetActive(false);
-        PlayerManager.instance.player.gameObject.GetComponent<NewMurphyMovement>().enabled = true;
+        MurphyPlayerManager.instance.player.gameObject.GetComponent<NewMurphyMovement>().enabled = true;
     }
 
     private IEnumerator Show()

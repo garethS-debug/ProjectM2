@@ -25,7 +25,7 @@ public class Combat : MonoBehaviour
     //Reference to script
     private CharacterStats ThePlayer;
     private CharacterStats TheEnemy;
-    private PlayerManager playerManager;
+    private MurphyPlayerManager playerManager;
     private Chase chase;
     EnemyFOV enemyFOV;
 
@@ -53,7 +53,7 @@ public class Combat : MonoBehaviour
         //Referencing the global GO of player
 //        Player = playerManager.player;
         //Informing that 'The Player' refers to that characters Stats
-        ThePlayer = PlayerManager.instance.player.gameObject.GetComponent<CharacterStats>();
+        ThePlayer = MurphyPlayerManager.instance.player.gameObject.GetComponent<CharacterStats>();
 
 
         if (Enemy != null)

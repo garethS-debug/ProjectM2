@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
   PlayerCharacterChoise: 1
-  PlayerName: Asdas
+  PlayerName: asdsa
   AutoConnect: 1
   SingleOrMultiPlayer: 2
