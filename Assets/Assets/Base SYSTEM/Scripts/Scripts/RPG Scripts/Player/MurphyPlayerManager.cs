@@ -16,7 +16,7 @@ public class MurphyPlayerManager : MonoBehaviour {
 
 
     [Header("Ragdoll")]
-    public GameObject playerRagdoll;
+  [HideInInspector]  public GameObject playerRagdoll;
     private bool Raddolling = false;
     private float thrust = 10000.0f;
     private Rigidbody rb;
@@ -24,6 +24,9 @@ public class MurphyPlayerManager : MonoBehaviour {
     [Header("Main Camera")]
     public Camera camera;
 
+
+    [Header("Respawn Point")]
+    public GameObject playerRespawnPoint;
 
     private void Awake()
     {
@@ -62,8 +65,19 @@ public class MurphyPlayerManager : MonoBehaviour {
             if (SceneSettings.Instance.isSinglePlayer)
             {
                 Debug.LogError("Adding Player from SceneSettings");
-                player = sceneSettings.humanPlayer;
-                Debug.LogError("Adding Player from SceneSettings");
+
+                if (SceneSettings.Instance.humanPlayer == null)
+                {
+                    Debug.Log("Human player not available");
+                }
+
+         
+
+                if (SceneSettings.Instance.humanPlayer != null)
+                {
+                    player = sceneSettings.humanPlayer;
+                }
+
 
                 PlayerStats = player.gameObject.GetComponent<PlayerStats>();
 
@@ -106,15 +120,47 @@ public class MurphyPlayerManager : MonoBehaviour {
 
         if (Raddolling == false)
         {
-           // CameraOnRails.instance.followoffset = new Vector3(0, 5.91f, -4.9f);
+
+
+           
+            foreach (Transform child in SceneSettings.Instance.humanPlayer.transform)
+            {
+                if (child.tag == "Player")
+                    player = child.gameObject;
+                Debug.Log("Correct Player found ".Bold().Color("green") + child.gameObject.name) ;
+            }
+
+           
+
+
+            playerRagdoll = player.gameObject.GetComponentInChildren<CharacterStats>().RagdollGO;
+
+
+            rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
+
+
+            SceneLoad.instance.Respawn(player, playerRespawnPoint, playerRagdoll);
+
+            // CameraOnRails.instance.followoffset = new Vector3(0, 5.91f, -4.9f);
             Time.timeScale = slowdownFactor;
             Time.fixedDeltaTime = Time.timeScale * 0.02f;
-            player.SetActive(false);
+
+
+
             playerRagdoll.transform.position = player.transform.position;
             playerRagdoll.SetActive(true);
+
+
+            player.SetActive(false);
+            //Move player to Respawn points to avoid AI going wrong
+           // player.transform.position = playerRespawnPoint.transform.position;
+
+
             rb.AddForce(transform.forward * thrust);
             Raddolling = true;
-            SceneLoad.instance.ExitScene();
+
+
+          
             
         }
        

@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
 
-
-
-
-
-
-
     /*
      * this script determines damage done to the character.
      *
@@ -134,6 +128,9 @@ public class CharacterStats : MonoBehaviour {
             Debug.Log(transform.name + " takes " + damage + " damage.");
             //Start take damage animation
             Debug.Log(this.gameObject.name + "Current health now" + currentHealth);
+
+       
+
             DetectHit.enemyhitDetected = false;
 
             if (OnhealthChanged != null)
@@ -155,7 +152,7 @@ public class CharacterStats : MonoBehaviour {
             this.gameObject.tag = "SleepingEnemy";
             anim.SetBool("isDead", true);
             StartCoroutine("EnemyDeath");
-           
+            Debug.Log( "Dieing now");
         }
 
       

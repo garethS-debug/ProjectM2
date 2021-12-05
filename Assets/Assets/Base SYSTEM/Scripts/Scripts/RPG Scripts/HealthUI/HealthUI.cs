@@ -28,7 +28,7 @@ public class HealthUI : MonoBehaviour
     [Header("Failed Level Ref")]
     [Tooltip("reference to the game manager")]
     public GameObject gameManager;
-    LevelFailed levelFailed;
+   // LevelFailed levelFailed;
 
     //[Header("Death")]
     //[Tooltip("Ragdoll Game Object")]
@@ -39,14 +39,26 @@ public class HealthUI : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
-        levelFailed = gameManager.gameObject.GetComponent<LevelFailed>();
+     //   levelFailed = gameManager.gameObject.GetComponent<LevelFailed>();
 
-        
-        if (SceneSettings.Instance.HealthImage != null)
+        if (SceneSettings.Instance != null)
         {
-            healthbarSlider = SceneSettings.Instance.HealthImage;
+        //    Debug.Log("Instance null".Bold().Color("red"));
+
+            if (SceneSettings.Instance.HealthImage != null)
+            {
+                healthbarSlider = SceneSettings.Instance.HealthImage;
+            }
+
+            if (SceneSettings.Instance.HealthImage == null)
+            {
+                Debug.Log("Health Image is null ".Bold().Color("red"));
+            }
         }
 
+
+
+       
 
         //anim = GetComponent<Animator>();
 
@@ -76,6 +88,7 @@ public class HealthUI : MonoBehaviour
         healthPercent = currentHealth/ maxHealth;
         if (healthbarSlider!= null)
         {
+           
             healthbarSlider.fillAmount = healthPercent;
         }
      

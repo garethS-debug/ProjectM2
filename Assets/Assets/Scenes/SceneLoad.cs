@@ -15,7 +15,11 @@ public class SceneLoad : MonoBehaviour
     public Image CutoutUIImage;
 
     public bool GameIsOver;
-    
+
+    private GameObject playerToReset;
+    private GameObject respawnPoint;
+    private GameObject ragdollGO;
+
 
     private void Awake()
     {
@@ -50,6 +54,51 @@ public class SceneLoad : MonoBehaviour
 
     }
 
+    public void Respawn (GameObject player, GameObject respawn, GameObject ragdoll)
+    {
+        Color alarm = CutoutUIImage.color;
+        alarm.a = 1;
+        CutoutUIImage.color = alarm;
+        transitionUI.SetActive(true);
+        transitionAnimation.SetBool("IsFadeOut", true);
+     //   transitionAnimation.SetBool("IsFadeIn", false);
+
+        playerToReset = player;
+        respawnPoint = respawn;
+        ragdollGO = ragdoll;
+
+
+    StartCoroutine("RespawnDelay");
+
+    }
+
+    IEnumerator RespawnDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Debug.Log("Resetting player POS");
+        playerToReset.transform.position = respawnPoint.transform.position;
+        // PlayerManager.instance.ResartLevel();
+     //   
+        transitionAnimation.SetBool("isFadeIn", true);
+        transitionAnimation.SetBool("IsFadeOut", false);
+
+
+        playerToReset.SetActive(true);
+        ragdollGO.gameObject.SetActive(false);
+
+
+        ResettingSceneForPlayer();
+    }
+
+
+    public void ResettingSceneForPlayer()
+    {
+
+        Debug.Log("Resetting scene for player");
+
+
+    }
+
 
 
     public void ExitScene()
@@ -60,7 +109,7 @@ public class SceneLoad : MonoBehaviour
         alarm.a = 1;
         CutoutUIImage.color = alarm;
         transitionUI.SetActive(true);
-        transitionAnimation.SetTrigger("IsFadeOut");
+        transitionAnimation.SetBool("IsFadeOut", true);
         StartCoroutine("FailedLevel");
 
     }
@@ -73,6 +122,7 @@ public class SceneLoad : MonoBehaviour
     }
 
 
+  
     public void WinScene()
     {
         GameIsOver = true;

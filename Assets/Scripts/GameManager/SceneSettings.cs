@@ -49,6 +49,8 @@ public class SceneSettings : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+
+        Debug.Log("Scene settings Instance is here ".Bold().Color("green"));
         if (_instance != null && _instance != this)
         {
             Destroy(this.gameObject);
