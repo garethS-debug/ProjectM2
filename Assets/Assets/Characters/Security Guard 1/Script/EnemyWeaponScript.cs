@@ -20,7 +20,7 @@ public class EnemyWeaponScript : MonoBehaviour
 
     [Header("Damage")]
     [Tooltip("damage")]
-    public int damage;
+     int damage;
     public float HitCounter;
 
     private CharacterStats ThePlayer;

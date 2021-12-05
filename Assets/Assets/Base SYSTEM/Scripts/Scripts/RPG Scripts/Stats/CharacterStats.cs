@@ -89,9 +89,10 @@ public class CharacterStats : MonoBehaviour {
         {
             //HERE THE PLAYER WILL TAKE DAMAGE BASED ON 'CHARACTER COMBAT'S'
 
-            TakeDamage(DamageRecieved);                     // This is the line for taking damage.
+          
           //  StartCoroutine(cameraShake.Shake(.10f, .2f));   //This is the line for shaking the camera on hit.
             DamageRecieved = characterCombat.damageDealt;   // This is the line for determining what damage is taken. Damage recieved by the enemy is the damage recieved from combat.
+            TakeDamage(DamageRecieved);                     // This is the line for taking damage.
             Debug.Log("Damage Recieved" + DamageRecieved);  // Debug Log
         }
 
@@ -129,7 +130,7 @@ public class CharacterStats : MonoBehaviour {
             // StartCoroutine(cameraShake.Shake(.15f, .25f));   //This is the line for shaking the camera on hit. Duration, Magnitude
            
 
-             currentHealth -= damage;
+            currentHealth -= damage;
             Debug.Log(transform.name + " takes " + damage + " damage.");
             //Start take damage animation
             Debug.Log(this.gameObject.name + "Current health now" + currentHealth);

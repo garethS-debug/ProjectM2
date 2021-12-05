@@ -42,8 +42,11 @@ public class HealthUI : MonoBehaviour
         levelFailed = gameManager.gameObject.GetComponent<LevelFailed>();
 
         
+        if (SceneSettings.Instance.HealthImage != null)
+        {
+            healthbarSlider = SceneSettings.Instance.HealthImage;
+        }
 
-        healthbarSlider = SceneSettings.Instance.HealthImage;
 
         //anim = GetComponent<Animator>();
 
