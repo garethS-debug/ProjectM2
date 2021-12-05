@@ -32,7 +32,7 @@ public class ItemPickup2 : Interacting
     private void Start()
     {
 
-        player = MurphyPlayerManager.instance.player.transform;
+        player = SceneSettings.Instance.humanPlayer.transform;
         interactionTransform = this.gameObject.transform;
         //if (PickupText != null)
         //{

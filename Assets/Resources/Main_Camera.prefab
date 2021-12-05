@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 8722063397873454107}
   - component: {fileID: 392258146381439911}
   - component: {fileID: 9202813718324506676}
+  - component: {fileID: -3197371627231358229}
   m_Layer: 0
   m_Name: Main_Camera
   m_TagString: CamFollow
@@ -307,3 +308,16 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &-3197371627231358229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722063397873454112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296a0082daa504a83a93ed5345f0adda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmount: 0.7

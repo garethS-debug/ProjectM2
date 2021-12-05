@@ -17,32 +17,42 @@ public class AttackCloseProximity : Decision
 
     private bool Look(StateController controller)
     {
-
-        //--- > foreach loop of every human player in scene
- 
-
-        if (controller.enemyFOV.playerPOS <= controller.enemyFOV.attackRange && controller.enemyFOV.inPeriphVision == true)
+        if (controller.playerWithinAttackrange == true)
+        {
+            //--- > foreach loop of every human player in scene
+            if (controller.enemyFOV.playerPOS <= controller.enemyFOV.attackRange)
 
 
             {
-            
-            // If player in close proximity
-            controller.pauseInWalk();
-        //    Debug.Log("PLayerInAttack Range");
-            return true;
+                Debug.Log("player IN close proximity ".Bold().Color("green") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
+                // If player in close proximity
+                controller.pauseInWalk();
+                return true;
+            }
+
+
+
+
+            if (controller.enemyFOV.playerPOS >= controller.enemyFOV.attackRange)
+            {
+                Debug.Log("player not close proximity ".Bold().Color("red") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
+                //  Debug.Log("player POS : " + controller.enemyFOV.playerPOS);
+                //   Debug.Log("Attack Range : " + controller.enemyFOV.attackRange);
+                // Debug.Log("PLayerNOTInAttackRange");
+                return false;
+            }
+
+            else
+            {
+                return false;
+            }
         }
+  
 
-
- 
-        
-        else
-        { 
-          //  Debug.Log("player POS : " + controller.enemyFOV.playerPOS);
-         //   Debug.Log("Attack Range : " + controller.enemyFOV.attackRange);
-           // Debug.Log("PLayerNOTInAttackRange");
+         else
+        {
             return false;
         }
-
 
     }
 

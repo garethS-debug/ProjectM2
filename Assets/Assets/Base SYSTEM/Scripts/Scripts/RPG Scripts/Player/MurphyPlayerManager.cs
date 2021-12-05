@@ -31,8 +31,8 @@ public class MurphyPlayerManager : MonoBehaviour {
     }
     #endregion
     [Header("Player")]
-    public GameObject player;
-    public Vector3 playerPOS;
+    [HideInInspector]   public GameObject player;
+//    public Vector3 playerPOS;
     public PlayerStats PlayerStats;
 
 
@@ -91,7 +91,7 @@ public class MurphyPlayerManager : MonoBehaviour {
     {
         Time.timeScale += (1.0f / slowdownLength) * Time.unscaledDeltaTime;
         Time.timeScale = Mathf.Clamp(Time.timeScale, 0f, 1f);
-        playerPOS = player.transform.position;
+//        playerPOS = player.transform.position;
     }
 
     public void KillPlayer()

@@ -10859,12 +10859,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d1f094466034d73977fa45eba9dc26, type: 3}
---- !u!1 &524308104560787720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5019408267123992681, guid: 43d1f094466034d73977fa45eba9dc26,
-    type: 3}
-  m_PrefabInstance: {fileID: 4400524497088550559}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5902052595250406917 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7852448333305786522, guid: 43d1f094466034d73977fa45eba9dc26,
@@ -10886,6 +10880,12 @@ Transform:
 --- !u!1 &5634039011788017558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 43d1f094466034d73977fa45eba9dc26,
+    type: 3}
+  m_PrefabInstance: {fileID: 4400524497088550559}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &524308104560787720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -5019408267123992681, guid: 43d1f094466034d73977fa45eba9dc26,
     type: 3}
   m_PrefabInstance: {fileID: 4400524497088550559}
   m_PrefabAsset: {fileID: 0}
@@ -11086,7 +11086,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634039011788017558}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5743c29fe6ab549edab570a8cad79f35, type: 3}
   m_Name: 
@@ -11105,7 +11105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634039011788017558}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ae63939b21444e7a8603cca58e630f7, type: 3}
   m_Name: 
@@ -11121,7 +11121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634039011788017558}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 571d8e7c34e034d3aaf0bc4c0b8c826b, type: 3}
   m_Name: 
@@ -11141,7 +11141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5634039011788017558}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7f22a86801a46728ad0485cfc73636, type: 3}
   m_Name: 
@@ -11294,3 +11294,40 @@ MonoBehaviour:
   useProIkFeature: 0
   showSolverDebug: 0
   enemyAIController: {fileID: 0}
+--- !u!114 &6701933748659855239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5634039011788017558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22781c2ae3b642a3ba18f58c115b285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  PlayerTakesDamage: 0
+  EnemyTakesDamage: 0
+  damage:
+    baseValue: 0
+    modifiers: 
+  armor:
+    baseValue: 0
+    modifiers: 
+  stealth:
+    baseValue: 0
+    modifiers: 
+  lockPick:
+    baseValue: 0
+    modifiers: 
+  speed:
+    baseValue: 0
+    modifiers: 
+  wealthMod:
+    baseValue: 0
+    modifiers: 
+  HitCounter: 0
+  DamageRecieved: 0
+  RagdollGO: {fileID: 0}
+  cameraShake: {fileID: 0}

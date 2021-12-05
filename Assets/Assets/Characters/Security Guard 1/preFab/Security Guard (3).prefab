@@ -939,15 +939,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b57fdbc9c74a54c419e1858af86bcb47, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ef6155e18f8c41d59270a209942380e, type: 3}
---- !u!1 &6865035083549023883 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8ef6155e18f8c41d59270a209942380e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3198800517275305858}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7574730019102944408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 8ef6155e18f8c41d59270a209942380e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3198800517275305858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6865035083549023883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 8ef6155e18f8c41d59270a209942380e,
     type: 3}
   m_PrefabInstance: {fileID: 3198800517275305858}
   m_PrefabAsset: {fileID: 0}
@@ -1086,8 +1086,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.8863845, y: 11.697503, z: 6.365987}
-  m_Center: {x: -0.11347859, y: 5.3487496, z: 0.49559036}
+  m_Size: {x: 5.8863845, y: 11.697503, z: 7.852575}
+  m_Center: {x: -0.11347854, y: 5.3487496, z: 0.6196719}
 --- !u!120 &3198800517275305902
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -1292,68 +1292,6 @@ MonoBehaviour:
   RagdollGO: {fileID: 6645482890814554964, guid: 688243711a68d71478d364663dc93ef1,
     type: 3}
   cameraShake: {fileID: 0}
---- !u!114 &3198800517275305905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6865035083549023883}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 772408d5223d043c883ece8f3f8706c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  stepDownWaitTime: 0
-  startStepDownWaitTime: 10
-  StartleWaitTime: 1.7
-  StartWaypointWaitTime: 3
-  AddTempWaypoint: 0
-  InstantiateWaypoint: 0
-  TempWaypointGO: {fileID: 6600740468661762294, guid: 353332dd1b71645439d6dda4e96e20e3,
-    type: 3}
-  IveSeenThePlayer: 0
-  IveSeenTheDistraction: 0
-  State0: 0
-  State1: 0
-  State2: 0
-  State3AlarmRaised: 0
-  StartClimbDown: 0
-  dissolveDistraction: 0
-  CantSeeDistraction: 0
-  Weapons:
-  - {fileID: 3512952553357019828}
-  - {fileID: 1978647533289295408}
-  RagdollGO: {fileID: 6645482890814554964, guid: 688243711a68d71478d364663dc93ef1,
-    type: 3}
-  player: {fileID: 0}
-  PauseBetweenAttacks: 1
-  AttackCounter: 0
-  AtkCoolDownTimer: 1
-  pauseAfterAttack: 0
-  lookAtPlayer: 0
-  StateMarker: {fileID: 3198800516639971614}
-  stateMarkerImage: {fileID: 3198800516195296598}
-  state0Sprite: {fileID: 21300000, guid: 61909bd47722e4fdb861473eb982351e, type: 3}
-  state1Sprite: {fileID: 21300000, guid: 5da9b9c6ba6eb4e7bbac4f66ec64a0f9, type: 3}
-  state2Sprite: {fileID: 21300000, guid: d4871ba38b98844ef907826a663a0d43, type: 3}
-  state3Sprite: {fileID: 21300000, guid: c815b993ebe2a4109b1d4e9ebe66287e, type: 3}
-  AlertedbyStaff: 0
-  staffMember: {fileID: 0}
-  StaffAlertingGuard: 0
-  WhereIsMurphy: {x: 0, y: 0, z: 0}
-  ICanHearTheAlarm: 0
-  ICanHearSomeoneShouting: 0
-  IKnowWhoShouted: {fileID: 0}
-  FalseAlarm: 0
-  RunningToAlarmPoint: 0
-  IveJustSeenThePlayer: 0
-  PoliceCalledAlarmTime: 3
-  PoliceCalledAlarmTimeMax: 0
-  Foodtime: 0
-  DistractionTimer: 3
-  CrimeScene: {fileID: 0}
 --- !u!114 &3198800517275305906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,71 +1361,6 @@ MonoBehaviour:
   attackSpeed: 1
   damageDealt: 0
   dealingDamage: 0
---- !u!114 &3198800517275305910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6865035083549023883}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25d1989c3e575445da41aa973dbdfa88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0
-  StartWaitTime: 3
-  moveLocations:
-  - {fileID: 7249773630635841603}
-  - {fileID: 7249773630853497677}
-  - {fileID: 7249773629683195748}
-  isOnPatrol: 0
-  isAlerted: 0
-  isWalkingToLastKnownLOC: 0
-  isAttack: 0
-  player: {fileID: 0}
-  isRunningBackToVan: 0
-  LastKnownLOC: []
-  LastKnownLocation: {x: 0, y: 0, z: 0}
-  isWalkingtoLastKnownLoc: 0
-  inAttackRange: 0
-  AlarmRaisedLocations:
-  - {fileID: 7249773630241490466}
-  - {fileID: 7249773630730235723}
-  - {fileID: 7249773631494545388}
-  isRunningToAlarmRaisedPatrolPoints: 0
-  isRunningToShout: 0
-  resetPath: 0
-  isRunningToFood: 0
-  FoodGatheringLocations: []
-  HasBeenAlertedByStaff: 0
-  isWalkingToDistraction: 0
-  Walking: 0
-  PauseInWalk: 0
-  defaultMoveSpeed: 1.8
-  moveSpeed: 1.8
-  speedDampTime: 0.2
-  defaultSpeed: 0
-  runningSpeed: 0
-  Startled: 0
-  Jogging: 0
-  SearchArea: 0
-  MaxAmountOfPolice: 2
-  policeSpawnPrefab: {fileID: 0}
-  TempPoliceOfficerSpawn: []
-  enableFeetIk: 1
-  heightFromGroundRaycast: 1.14
-  raycastDownDistance: 1.5
-  environmentLayer:
-    serializedVersion: 2
-    m_Bits: 16384
-  pelvisOffset: 0
-  pelvisUpAndDownSpeed: 0.28
-  feetToIkPositionSpeed: 0.5
-  leftFootAnimVariableName: LeftFootCurve
-  rightFootAnimVariableName: RightFootCurve
-  useProIkFeature: 0
-  showSolverDebug: 1
 --- !u!114 &3198800517275305911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,6 +1422,7 @@ MonoBehaviour:
   AtkCoolDownTimer: 2
   pauseAfterAttack: 0
   lookAtPlayer: 0
+  playerInAttackRange: {fileID: 0}
   rightFootPosition: {x: 0, y: 0, z: 0}
   leftFootPosition: {x: 0, y: 0, z: 0}
   leftFootIkPosition: {x: 0, y: 0, z: 0}

@@ -18,7 +18,7 @@ public class PoliceMurphyGoesHidden : Decision
 
         if (controller.policeFOV.PlayerinFOV == true)
         { 
-            if (MurphyPlayerManager.instance.player.GetComponent<NewMurphyMovement>().IsHidden == true)
+            if (SceneSettings.Instance.humanPlayer.GetComponent<NewMurphyMovement>().IsHidden == true)
             {
                 // If player in FOV
                 Debug.Log("POLICE: PLayerIsGoingHidden");

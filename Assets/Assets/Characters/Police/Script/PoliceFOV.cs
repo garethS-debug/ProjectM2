@@ -158,7 +158,7 @@ public class PoliceFOV : MonoBehaviour
         {
             testScoreBool = false;
         }
-        playerPOS = Vector3.Distance(MurphyPlayerManager.instance.player.transform.position, this.transform.position);
+        playerPOS = Vector3.Distance(SceneSettings.Instance.humanPlayer.transform.position, this.transform.position);
 
     }
     private void LateUpdate()

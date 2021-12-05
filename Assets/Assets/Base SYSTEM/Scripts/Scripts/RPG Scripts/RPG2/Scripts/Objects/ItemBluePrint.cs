@@ -69,7 +69,7 @@ public class ItemBluePrint : ScriptableObject
             if (consumeHealth > 0.1f )
             {
               
-                PlayerStats TempHealthLog = MurphyPlayerManager.instance.player.gameObject.GetComponent < PlayerStats>();
+                PlayerStats TempHealthLog = SceneSettings.Instance.humanPlayer.gameObject.GetComponent < PlayerStats>();
 
                 if (TempHealthLog.currentHealth > 0 && TempHealthLog.currentHealth < TempHealthLog.maxHealth)
                 {

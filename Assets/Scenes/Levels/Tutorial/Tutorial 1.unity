@@ -123,7 +123,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 60758f56e9d8daa4c837130eeb5bcd79, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 33a6b341b07774a25ab1e799b3738f9f, type: 2}
 --- !u!1 &2285465
 GameObject:
   m_ObjectHideFlags: 0
@@ -44861,6 +44861,7 @@ MonoBehaviour:
   AtkCoolDownTimer: 2
   pauseAfterAttack: 0
   lookAtPlayer: 0
+  playerInAttackRange: {fileID: 0}
   rightFootPosition: {x: 0, y: 0, z: 0}
   leftFootPosition: {x: 0, y: 0, z: 0}
   leftFootIkPosition: {x: 0, y: 0, z: 0}
@@ -53354,7 +53355,7 @@ PrefabInstance:
     - target: {fileID: -3056339096822457822, guid: b3dd96aeebb6e9b4480dba0f8d8167ff,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3056339096822457822, guid: b3dd96aeebb6e9b4480dba0f8d8167ff,
         type: 3}
@@ -53880,7 +53881,7 @@ PrefabInstance:
     - target: {fileID: 6538391109246434213, guid: b3dd96aeebb6e9b4480dba0f8d8167ff,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6538391109246434213, guid: b3dd96aeebb6e9b4480dba0f8d8167ff,
         type: 3}
@@ -91482,6 +91483,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -3.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7574730019102944408, guid: 403b7e33be48711458daa173876fcd75,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.85
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3198800517275305905, guid: 403b7e33be48711458daa173876fcd75, type: 3}

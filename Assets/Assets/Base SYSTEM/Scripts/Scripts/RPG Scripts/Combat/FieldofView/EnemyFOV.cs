@@ -61,7 +61,7 @@ public class EnemyFOV : MonoBehaviour
     public  CharacterStats PlayerStats;
     private Chase chase;
     public EquipmentManager equipmentManager;
-    private GuardPatrol patrol;
+  //  private GuardPatrol patrol;
     private GuardAI enemyAIController;
     [HideInInspector] public DistractableOBJ distractableObject;
     public GameObject distrctionOBJ;
@@ -113,11 +113,13 @@ public class EnemyFOV : MonoBehaviour
     public List<Vector3> LastKnownFOVLOC = new List<Vector3>();
     public Vector3 LastKnownFOVLocation;
     public Transform LastKnowLOCTransform;
-    private Transform nearestPLayer;
+    float closestDistanceSqr;
     public  float playerPOS;
+    public List<GameObject> PlayersInFOV = new List<GameObject>();
 
 
-   [Header("State Controller")]
+
+    [Header("State Controller")]
    [HideInInspector] public StateController statecontroller;
 
     private void Start()
@@ -125,7 +127,7 @@ public class EnemyFOV : MonoBehaviour
         anim = GetComponent<Animator>();            // get the animator component attached to enemy
         chase = GetComponent<Chase>();              //refernece to  chase script
         combat = GetComponent<CharacterCombat>();   // reference to Enemy Attacking Player
-        patrol = GetComponent<GuardPatrol>();            // reference to the patrol script
+       // patrol = GetComponent<GuardPatrol>();            // reference to the patrol script
         enemyAIController = GetComponent<GuardAI>();
 
 
@@ -152,6 +154,7 @@ public class EnemyFOV : MonoBehaviour
     {
 
         FindVisiableTargets();
+        FindNearestPlayer();
 
         if (PlayerinFOV == true && testScoreBool == false)
         {
@@ -171,25 +174,18 @@ public class EnemyFOV : MonoBehaviour
             LastKnownFOVLOC.RemoveRange(0, 2);
         }
 
-        //playerPOS = Vector3.Distance(MurphyPlayerManager.instance.player.transform.position, this.transform.position);
-      
-            nearestPLayer = GetClosestEnemy(SceneSettings.Instance.humanPlayers, this.gameObject.transform);
 
-            if (SceneSettings.Instance.humanPlayers == null)
-        {
-            Debug.Log("Human Players missings");
-        }
 
-        if (this.gameObject.transform == null)
-        {
-            Debug.Log("This is null");
-        }
-        playerPOS = Vector3.Distance(nearestPLayer.position, this.transform.position);
+
+        //Finidng Closest Tartget
+        // playerPOS = Vector3.Distance(nearestPLayer.position, this.transform.position);
 
     }
     private void LateUpdate()
     {
         DrawFieldofView();
+        //Finidng Closest Tartget
+        
     }
 
 
@@ -197,6 +193,7 @@ public class EnemyFOV : MonoBehaviour
     public void FindVisiableTargets()
     {
         PlayerinFOV = false;        //Reset the FOV as we are looking for the player
+        PlayersInFOV.Clear();
         visibleTargets.Clear();     //Reset the visiable targets as we are looking for the player
                                     /////visibleTargetWaypoint.Clear();
         SeenCrime = false;          //reset crime seen
@@ -217,6 +214,13 @@ public class EnemyFOV : MonoBehaviour
                     playerFOV = target.gameObject.GetComponent<FieldOfView>();
                     newMurphyMovement = target.gameObject.GetComponent<NewMurphyMovement>();
 
+
+                    //playerPOS = Vector3.Distance(MurphyPlayerManager.instance.player.transform.position, this.transform.position);
+
+                
+
+
+
                     if (fooledByCostume == false )        //If we are not fooled by the costume
                     {
                         if (playerFOV != false)
@@ -235,7 +239,7 @@ public class EnemyFOV : MonoBehaviour
                                                                 //    Objective.instance.UpdateScore(10.0f); //Penelty Points;
                                                                 //    UpdateScore = true;
                                                                 //}
-
+                                PlayersInFOV.Add(target.gameObject);
                                 //   Alarm.Instance.RaiseAlarm = true;
 
                                 if (Objective.instance.levelInformation.neverSpotted == false)
@@ -243,12 +247,15 @@ public class EnemyFOV : MonoBehaviour
                                     Objective.instance.levelInformation.neverSpotted = true;
                                 }
 
+                                if (target != null)
+                                {
+                                    //LAST KNOWN LOC
+                                   // patrol.LastKnownLOC.Add(target.transform.position);
+                                    LastKnowLOCTransform = target.transform;
+                                    LastKnownFOVLOC.Add(LastKnowLOCTransform.transform.position);
+                                    // enemyAIController.AddTempWaypoint = true; // start adding waypoints
+                                }
 
-                                //LAST KNOWN LOC
-                                patrol.LastKnownLOC.Add(target.transform.position);
-                                LastKnowLOCTransform = target.transform;
-                                LastKnownFOVLOC.Add(LastKnowLOCTransform.transform.position);
-                                // enemyAIController.AddTempWaypoint = true; // start adding waypoints
                             }
 
                         }
@@ -296,7 +303,7 @@ public class EnemyFOV : MonoBehaviour
 
 
                         Distraction = true;
-                        patrol.LastKnownLOC.Add(target.transform.position);
+                        //patrol.LastKnownLOC.Add(target.transform.position);
 
 
                         print("I can see distraction");
@@ -310,7 +317,7 @@ public class EnemyFOV : MonoBehaviour
                         if (enemyAIController.CantSeeDistraction == false) //if the time runs down. The object in FOV becomes blank
                         {
                             Distraction = true;
-                            patrol.LastKnownLOC.Add(target.transform.position);
+                           // patrol.LastKnownLOC.Add(target.transform.position);
                         }
 
 
@@ -596,23 +603,59 @@ public class EnemyFOV : MonoBehaviour
         }
     }
 
-    Transform GetClosestEnemy(List<GameObject> enemies, Transform fromThis)
+    public void OnTriggerStay(Collider other)
     {
-        Transform bestTarget = null;
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 currentPosition = fromThis.position;
-        foreach (GameObject potentialTarget in enemies)
+     
+        if (other.gameObject.tag == "Player")
         {
-            Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
-            {
-                closestDistanceSqr = dSqrToTarget;
-                bestTarget = potentialTarget.transform;
-            }
+            statecontroller.playerInAttackRange = other.gameObject;
+            statecontroller.playerWithinAttackrange = true;
         }
-        print("Best target = " + bestTarget);
-        return bestTarget;
+
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+
+        if (other.gameObject.tag == "Player")
+        {
+            statecontroller.playerWithinAttackrange = false;
+        }
+
+    }
+
+
+    public void FindNearestPlayer()
+    {
+        if (PlayersInFOV.Count >= 1)
+        {
+
+            Transform bestTarget = null;
+            float closestDistanceSqr = Mathf.Infinity;
+            Vector3 currentPosition = transform.position;
+
+
+
+            foreach (GameObject potentialTarget in PlayersInFOV)
+            {
+
+                Vector3 directionToTarget = potentialTarget.transform.position - currentPosition;
+                float dSqrToTarget = directionToTarget.sqrMagnitude;
+                if (dSqrToTarget < closestDistanceSqr)
+                {
+                    closestDistanceSqr = dSqrToTarget;
+                    bestTarget = potentialTarget.transform;
+                }
+
+               
+            }
+          //  Debug.Log("player ".Bold().Color("white") + bestTarget);
+            // If player in close proximity
+            playerPOS = Vector3.Distance(bestTarget.transform.position, this.transform.position);
+//            Debug.Log("player POS ".Bold().Color("white") + playerPOS);
+
+        }
+   
     }
 }
 

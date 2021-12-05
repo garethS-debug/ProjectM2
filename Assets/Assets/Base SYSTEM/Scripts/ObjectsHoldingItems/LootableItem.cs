@@ -111,7 +111,7 @@ public class LootableItem : MonoBehaviour
     private void Start()
     {
 
-        player = MurphyPlayerManager.instance.player.transform;
+       
         interactionTransform = this.gameObject.transform;
         //  PickUpTextBox = GameObject.FindGameObjectWithTag("ItemPickUpText");
         PickUpTextBox = MasterPickupMessage.Instance.pickupmessageText;

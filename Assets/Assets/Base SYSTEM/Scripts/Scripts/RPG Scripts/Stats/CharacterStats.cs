@@ -118,7 +118,8 @@ public class CharacterStats : MonoBehaviour {
                 HitCounter = 0.01f;
             }
 
-          
+
+            cameraShake = SceneSettings.Instance.humanPlayer.GetComponent<murphyPlayerController>().camPrefab.GetComponent<CameraShake>();
 
             // Subtract the armor value
             damage -= armor.GetValue();

@@ -53,7 +53,7 @@ public class Combat : MonoBehaviour
         //Referencing the global GO of player
 //        Player = playerManager.player;
         //Informing that 'The Player' refers to that characters Stats
-        ThePlayer = MurphyPlayerManager.instance.player.gameObject.GetComponent<CharacterStats>();
+      
 
 
         if (Enemy != null)
@@ -109,15 +109,21 @@ public class Combat : MonoBehaviour
         //Here one character (sec guard) is dealing damage to another (player)
         if (this.gameObject.tag == "Enemy" & dealingDamage == true)
         {
-            //Here we want to say that damage is equal to this characters damage stats
-            damage = this.gameObject.GetComponent<CharacterStats>().damage.GetValue();
+            ThePlayer = this.gameObject.GetComponent<StateController>().playerInAttackRange.gameObject.GetComponent<CharacterStats>();
 
-          //  HitCounter = damage / 10;
+            if (ThePlayer != null)
+            {
+                //Here we want to say that damage is equal to this characters damage stats
+                damage = this.gameObject.GetComponent<CharacterStats>().damage.GetValue();
 
-            ThePlayer.PlayerTakesDamage = true;
-            ThePlayer.DamageRecieved = damage;
-            ThePlayer.TakeDamage(damage);
-            dealingDamage = false;
+                //  HitCounter = damage / 10;
+
+                ThePlayer.PlayerTakesDamage = true;
+                ThePlayer.DamageRecieved = damage;
+                ThePlayer.TakeDamage(damage);
+                dealingDamage = false;
+            }
+       
         }
 
         if (this.gameObject.tag == "Player" & dealingDamage == true)

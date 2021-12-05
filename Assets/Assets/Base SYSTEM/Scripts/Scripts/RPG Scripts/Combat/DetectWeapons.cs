@@ -152,7 +152,7 @@ public class DetectWeapons : MonoBehaviour
                                                // THEN SWITCH 
                                                //enemyhitDetected = false;
         //CharacterStats.damageTrigger = true; //
-        CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>(); //Initiate combat?
+        CharacterCombat playerCombat = SceneSettings.Instance.humanPlayer.GetComponent<CharacterCombat>(); //Initiate combat?
         playerCombat.Attack(myStats); //attacking Enemy Character stats
 
         //Chase.damageAnim = true;
