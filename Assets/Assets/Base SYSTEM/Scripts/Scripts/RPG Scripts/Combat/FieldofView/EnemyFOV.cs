@@ -114,8 +114,9 @@ public class EnemyFOV : MonoBehaviour
     public Vector3 LastKnownFOVLocation;
     public Transform LastKnowLOCTransform;
     float closestDistanceSqr;
-    public  float playerPOS;
+    [HideInInspector] public  float playerPOS;
     public List<GameObject> PlayersInFOV = new List<GameObject>();
+  [HideInInspector]  public GameObject bestTarget;
 
 
 
@@ -630,7 +631,7 @@ public class EnemyFOV : MonoBehaviour
         if (PlayersInFOV.Count >= 1)
         {
 
-            Transform bestTarget = null;
+            bestTarget = null;
             float closestDistanceSqr = Mathf.Infinity;
             Vector3 currentPosition = transform.position;
 
@@ -644,7 +645,7 @@ public class EnemyFOV : MonoBehaviour
                 if (dSqrToTarget < closestDistanceSqr)
                 {
                     closestDistanceSqr = dSqrToTarget;
-                    bestTarget = potentialTarget.transform;
+                    bestTarget = potentialTarget;
                 }
 
                
@@ -652,7 +653,7 @@ public class EnemyFOV : MonoBehaviour
           //  Debug.Log("player ".Bold().Color("white") + bestTarget);
             // If player in close proximity
             playerPOS = Vector3.Distance(bestTarget.transform.position, this.transform.position);
-//            Debug.Log("player POS ".Bold().Color("white") + playerPOS);
+            Debug.Log("player best target is  ".Bold().Color("white") + bestTarget.name);
 
         }
    

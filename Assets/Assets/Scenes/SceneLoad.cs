@@ -61,6 +61,12 @@ public class SceneLoad : MonoBehaviour
         CutoutUIImage.color = alarm;
         transitionUI.SetActive(true);
         transitionAnimation.SetBool("IsFadeOut", true);
+        if (player.GetComponent<murphyPlayerController>() != null)
+        {
+            player.GetComponent<murphyPlayerController>().isDead = true;
+        }
+
+     
      //   transitionAnimation.SetBool("IsFadeIn", false);
 
         playerToReset = player;
@@ -86,6 +92,9 @@ public class SceneLoad : MonoBehaviour
         playerToReset.SetActive(true);
         ragdollGO.gameObject.SetActive(false);
 
+        yield return new WaitForSeconds(1.5f);
+
+  
 
         ResettingSceneForPlayer();
     }
@@ -93,6 +102,10 @@ public class SceneLoad : MonoBehaviour
 
     public void ResettingSceneForPlayer()
     {
+        if (playerToReset.GetComponent<murphyPlayerController>() != null)
+        {
+            playerToReset.GetComponent<murphyPlayerController>().isDead = false;
+        }
 
         Debug.Log("Resetting scene for player");
 

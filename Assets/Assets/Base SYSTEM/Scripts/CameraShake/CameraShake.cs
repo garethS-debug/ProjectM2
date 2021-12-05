@@ -30,14 +30,14 @@ public class CameraShake : MonoBehaviour
                 Vector3 originalPOS = transform.localPosition;
                 this.transform.localPosition = originalPOS + Random.insideUnitSphere * shakeAmount;
                 elapsed += Time.deltaTime;
-                Debug.Log("Shaking ".Bold().Color("white"));
+//                Debug.Log("Shaking ".Bold().Color("white"));
             }
 
             if (elapsed >= duration)
             {
                 elapsed = 0;
                 ShakeCam = false;
-                Debug.Log("Not Shaking ".Bold().Color("white"));
+          //      Debug.Log("Not Shaking ".Bold().Color("white"));
             }
                
         }

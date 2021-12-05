@@ -67,6 +67,11 @@ public class murphyPlayerController : MonoBehaviour
 	[HideInInspector] public CameraOnRails _camControll;
 
 
+
+	[Header("Death")]
+	[HideInInspector] public bool isDead;
+
+
 	private void Awake()
 	{
 
