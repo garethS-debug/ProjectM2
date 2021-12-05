@@ -20011,6 +20011,7 @@ MonoBehaviour:
   NextScene:
     sceneAsset: {fileID: 0}
     scenePath: 
+  HealthImage: {fileID: 1015083609}
   DebugMode: 0
 --- !u!4 &533855408
 Transform:
@@ -20069,18 +20070,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8722063397328896509}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &546754019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8722063397873454110, guid: 70a1340ad9624e44e87b7716f66b2fd4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8722063397328896509}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546754013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 296a0082daa504a83a93ed5345f0adda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &547995054
 GameObject:
   m_ObjectHideFlags: 0
@@ -37562,6 +37551,18 @@ Transform:
   m_Father: {fileID: 1858149143}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1015083609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 285478333, guid: 714b437889f29451486d176a860fdc03,
+    type: 3}
+  m_PrefabInstance: {fileID: 1887256847940918711}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1022879148 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4049260603482664645, guid: 94aaa64ad0b854282bbe8f7502c9d3f9,
@@ -44862,6 +44863,7 @@ MonoBehaviour:
   pauseAfterAttack: 0
   lookAtPlayer: 0
   playerInAttackRange: {fileID: 0}
+  playerWithinAttackrange: 0
   rightFootPosition: {x: 0, y: 0, z: 0}
   leftFootPosition: {x: 0, y: 0, z: 0}
   leftFootIkPosition: {x: 0, y: 0, z: 0}
@@ -91438,7 +91440,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cameraShake
       value: 
-      objectReference: {fileID: 546754019}
+      objectReference: {fileID: 0}
     - target: {fileID: 3198800517275305905, guid: 403b7e33be48711458daa173876fcd75,
         type: 3}
       propertyPath: player
@@ -91642,7 +91644,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cameraShake
       value: 
-      objectReference: {fileID: 546754019}
+      objectReference: {fileID: 0}
     - target: {fileID: 4049260603120403452, guid: 94aaa64ad0b854282bbe8f7502c9d3f9,
         type: 3}
       propertyPath: player

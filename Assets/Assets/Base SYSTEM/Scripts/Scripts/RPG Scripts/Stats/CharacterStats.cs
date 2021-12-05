@@ -119,14 +119,17 @@ public class CharacterStats : MonoBehaviour {
             }
 
 
-            cameraShake = SceneSettings.Instance.humanPlayer.GetComponent<murphyPlayerController>().camPrefab.GetComponent<CameraShake>();
+
+            this.gameObject.GetComponent<murphyPlayerController>().CameraPrefab.GetComponent<CameraShake>().ShakeCam = true;
 
             // Subtract the armor value
             damage -= armor.GetValue();
             damage = Mathf.Clamp(damage, 0, int.MaxValue);
             // Damage the character
-            StartCoroutine(cameraShake.Shake(.15f, .25f));   //This is the line for shaking the camera on hit. Duration, Magnitude
-            currentHealth -= damage;
+            // StartCoroutine(cameraShake.Shake(.15f, .25f));   //This is the line for shaking the camera on hit. Duration, Magnitude
+           
+
+             currentHealth -= damage;
             Debug.Log(transform.name + " takes " + damage + " damage.");
             //Start take damage animation
             Debug.Log(this.gameObject.name + "Current health now" + currentHealth);

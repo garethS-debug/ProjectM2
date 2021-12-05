@@ -63,7 +63,7 @@ public class murphyPlayerController : MonoBehaviour
 
 	[Header("Camera")]
 	public Camera camPrefab;
-	Camera CameraPrefab;
+	[HideInInspector] public Camera CameraPrefab;
 	[HideInInspector] public CameraOnRails _camControll;
 
 

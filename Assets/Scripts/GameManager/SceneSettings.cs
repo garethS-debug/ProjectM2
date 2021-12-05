@@ -6,6 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using ExitGames.Client.Photon;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneSettings : MonoBehaviourPunCallbacks
 {
@@ -35,6 +36,10 @@ public class SceneSettings : MonoBehaviourPunCallbacks
 
     [Header(" Scenes ")]
     public SceneReference NextScene;
+
+
+    [Header(" UI ")]
+    public Image HealthImage;
     //  PhotonView PV;
     //  private GameObject[] players;
     // public GameObject myPlayer;
@@ -85,7 +90,11 @@ public class SceneSettings : MonoBehaviourPunCallbacks
 
         else if (enableSteamSetttings == false) 
         {
-            steamSettings.gameObject.SetActive(false);
+            if (steamSettings != false)
+            {
+                steamSettings.gameObject.SetActive(false);
+            }
+       
         }
 
     }

@@ -24,7 +24,7 @@ public class AttackCloseProximity : Decision
 
 
             {
-                Debug.Log("player IN close proximity ".Bold().Color("green") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
+             //   Debug.Log("player IN close proximity ".Bold().Color("green") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
                 // If player in close proximity
                 controller.pauseInWalk();
                 return true;
@@ -35,7 +35,7 @@ public class AttackCloseProximity : Decision
 
             if (controller.enemyFOV.playerPOS >= controller.enemyFOV.attackRange)
             {
-                Debug.Log("player not close proximity ".Bold().Color("red") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
+             //   Debug.Log("player not close proximity ".Bold().Color("red") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
                 //  Debug.Log("player POS : " + controller.enemyFOV.playerPOS);
                 //   Debug.Log("Attack Range : " + controller.enemyFOV.attackRange);
                 // Debug.Log("PLayerNOTInAttackRange");

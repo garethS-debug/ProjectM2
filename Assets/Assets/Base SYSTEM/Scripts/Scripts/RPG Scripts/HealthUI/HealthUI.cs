@@ -41,7 +41,9 @@ public class HealthUI : MonoBehaviour
         gameManager = GameObject.FindGameObjectWithTag("GameController");
         levelFailed = gameManager.gameObject.GetComponent<LevelFailed>();
 
-        healthbarSlider = HealthImage;
+        
+
+        healthbarSlider = SceneSettings.Instance.HealthImage;
 
         //anim = GetComponent<Animator>();
 
@@ -49,7 +51,7 @@ public class HealthUI : MonoBehaviour
         {
                                         //THis was moved into the tag check from 1 line above. 
             maxHealth = gameObject.GetComponent<CharacterStats>().maxHealth;
-            Debug.Log("HealthUI ENEMY");
+           // Debug.Log("HealthUI ENEMY");
             Instantiate(uiPrefab,target);
             uiPrefab.SetActive(true);
                        //// healthbarSlider = ui.GetChild(0).GetComponent<Image>();
@@ -69,7 +71,11 @@ public class HealthUI : MonoBehaviour
 
         currentHealth = gameObject.GetComponent<CharacterStats>().currentHealth;
         healthPercent = currentHealth/ maxHealth;
-        healthbarSlider.fillAmount = healthPercent;
+        if (healthbarSlider!= null)
+        {
+            healthbarSlider.fillAmount = healthPercent;
+        }
+     
 
          if (currentHealth <= 0)
         {

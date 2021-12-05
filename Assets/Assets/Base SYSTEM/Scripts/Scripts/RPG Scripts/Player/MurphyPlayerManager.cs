@@ -56,33 +56,37 @@ public class MurphyPlayerManager : MonoBehaviour {
             Destroy(this.gameObject);
         }
 
+        if (SceneSettings.Instance != false)
 
+        {
+            if (SceneSettings.Instance.isSinglePlayer)
+            {
+                Debug.LogError("Adding Player from SceneSettings");
+                player = sceneSettings.humanPlayer;
+                Debug.LogError("Adding Player from SceneSettings");
+
+                PlayerStats = player.gameObject.GetComponent<PlayerStats>();
+
+                playerRagdoll.SetActive(false);
+
+                rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
+
+            }
+            if (SceneSettings.Instance.isMultiPlayer)
+            {
+
+                PlayerStats = player.gameObject.GetComponent<PlayerStats>();
+
+                playerRagdoll.SetActive(false);
+
+                rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
+
+
+            }
+        }
  
 
-        if (SceneSettings.Instance.isSinglePlayer)
-        {
-            Debug.LogError("Adding Player from SceneSettings");
-            player = sceneSettings.humanPlayer;
-            Debug.LogError("Adding Player from SceneSettings");
-
-            PlayerStats = player.gameObject.GetComponent<PlayerStats>();
-
-            playerRagdoll.SetActive(false);
-
-            rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
-
-        }
-        if (SceneSettings.Instance.isMultiPlayer)
-        {
-
-            PlayerStats = player.gameObject.GetComponent<PlayerStats>();
-
-            playerRagdoll.SetActive(false);
-
-            rb = playerRagdoll.gameObject.GetComponent<Rigidbody>();
-
-
-        }
+       
 
     }
 

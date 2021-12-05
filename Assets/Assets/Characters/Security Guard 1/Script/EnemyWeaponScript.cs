@@ -83,9 +83,13 @@ public class EnemyWeaponScript : MonoBehaviour
         {
             combat = collision.gameObject.GetComponent<Combat>();
             ThePlayer = collision.GetComponent<CharacterStats>();
+
             Debug.Log("MAIN CHARACTER HIT BY" + this.gameObject.transform.name);
             anim = collision.gameObject.GetComponent<Animator>();
             StartCoroutine("Damage");
+
+    
+            
 
         }
     }
