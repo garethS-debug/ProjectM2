@@ -44,7 +44,7 @@ public class PlayerStats : CharacterStats {
     {
         base.Die();
         //kill the player
-        PlayerManager.instance.KillPlayer();
+        MurphyPlayerManager.instance.KillPlayer();
     }
 
 

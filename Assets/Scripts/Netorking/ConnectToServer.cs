@@ -12,6 +12,41 @@ public class ConnectToServer : MonoBehaviourPunCallbacks            //Photon cal
     public TMP_InputField userNameInput;
     public TMP_Text buttonText;
 
+    public SceneReference levelToLoad;
+
+    [Header("SO")]
+    public PlayerSO playerSOData;
+
+    [Header("Autoconnect")]
+    public GameObject AutoConnectUI;
+    public GameObject manualLogin;
+    public float loadingProgress;
+
+    [Header("Loading Bar")]
+    public Slider slider;
+    public TMP_Text loadingVlaue;
+
+
+
+    public void Awake()
+    {
+        if (playerSOData.AutoConnect == true)
+        {
+            AutoConnectUI.SetActive(true);
+            userNameInput.text = playerSOData.PlayerName;
+            PhotonNetwork.NickName = userNameInput.text;            //Setting players username to Pun's 'Nickname'
+            buttonText.text = "Connecting....";
+            PhotonNetwork.AutomaticallySyncScene = true;            //Client scene can be changed by master 
+            PhotonNetwork.ConnectUsingSettings();                   //Connect to Photon server
+            manualLogin.gameObject.SetActive(false);
+        }
+
+        else
+        {
+            AutoConnectUI.SetActive(false);
+            manualLogin.gameObject.SetActive(true);
+        }
+    }
     public void OnClickConnect()
     {
         if (userNameInput.text.Length >= 1)
@@ -25,7 +60,24 @@ public class ConnectToServer : MonoBehaviourPunCallbacks            //Photon cal
 
     public override void OnConnectedToMaster()
     {
-        SceneManager.LoadScene("Lobby");                            //Copy to lobby scene. 
+
+
+        StartCoroutine(LoadAsync());
+
+
+    }
+
+    IEnumerator LoadAsync ()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);                            //Copy to lobby scene. 
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            loadingProgress = operation.progress;
+            slider.value = loadingProgress;
+            loadingVlaue.text = progress * 100f + "%";
+            yield return null; //wait for next frame
+        }
     }
 
  

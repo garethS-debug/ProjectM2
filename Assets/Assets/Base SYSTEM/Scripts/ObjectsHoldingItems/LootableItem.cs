@@ -111,7 +111,7 @@ public class LootableItem : MonoBehaviour
     private void Start()
     {
 
-        player = PlayerManager.instance.player.transform;
+       
         interactionTransform = this.gameObject.transform;
         //  PickUpTextBox = GameObject.FindGameObjectWithTag("ItemPickUpText");
         PickUpTextBox = MasterPickupMessage.Instance.pickupmessageText;
@@ -157,7 +157,7 @@ public class LootableItem : MonoBehaviour
                 if (lootPercent < maxLoot)
                 {
                     Prompt.SetActive(false);
-                    float difficult = Difficulty - PlayerManager.instance.PlayerStats.lockPick.GetValue();
+                    float difficult = Difficulty - MurphyPlayerManager.instance.PlayerStats.lockPick.GetValue();
                     uiLootable.SetActive(true);
                     lootPercent += difficult * Time.deltaTime;
                     lootSlider.fillAmount = lootPercent / maxLoot;
@@ -268,7 +268,7 @@ public class LootableItem : MonoBehaviour
 
                     if (lootPercent < maxLoot)
                     {
-                        float difficult = Difficulty - PlayerManager.instance.PlayerStats.lockPick.GetValue();
+                        float difficult = Difficulty - MurphyPlayerManager.instance.PlayerStats.lockPick.GetValue();
                         Prompt.SetActive(false);
                         uiLootable.SetActive(true);
                         lootPercent += difficult * Time.deltaTime;

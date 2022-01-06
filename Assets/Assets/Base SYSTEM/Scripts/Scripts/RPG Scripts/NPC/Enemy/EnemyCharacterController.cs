@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class EnemyCharacterController : MonoBehaviour {
 
-    PlayerManager playerManager;
+    MurphyPlayerManager playerManager;
     CharacterStats myStats;
     public static bool StartEnemyAttack;
     public static bool WithinEnemyAttackRange;

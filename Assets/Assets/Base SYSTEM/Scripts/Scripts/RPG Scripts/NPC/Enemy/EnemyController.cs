@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        target = PlayerManager.instance.player.transform;
+        target = SceneSettings.Instance.humanPlayer.transform;
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>(); // reference to Enemy Attacking Player
     }

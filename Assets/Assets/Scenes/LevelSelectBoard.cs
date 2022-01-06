@@ -55,7 +55,7 @@ public class LevelSelectBoard : MonoBehaviour
     private void Start()
     {
 
-        player = PlayerManager.instance.player.transform;
+        player = SceneSettings.Instance.humanPlayer.transform;
         interactionTransform = this.gameObject.transform;
       //  PickUpTextBox = GameObject.FindGameObjectWithTag("ItemPickUpText");
         MessageBox.gameObject.SetActive(false);

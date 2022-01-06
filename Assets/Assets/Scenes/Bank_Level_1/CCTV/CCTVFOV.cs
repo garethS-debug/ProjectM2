@@ -338,7 +338,7 @@ public class CCTVFOV : MonoBehaviour
             if (Alarm.Instance.fooledByCostume == false)
             {
 
-            if (PlayerManager.instance.player.GetComponent<NewMurphyMovement>().IsHidden == false)
+            if (MurphyPlayerManager.instance.player.GetComponent<NewMurphyMovement>().IsHidden == false)
             {
 
                 Alarm.Instance.RemoveCostumeProtection();

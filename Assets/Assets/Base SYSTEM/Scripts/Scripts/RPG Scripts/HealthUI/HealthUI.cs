@@ -28,7 +28,7 @@ public class HealthUI : MonoBehaviour
     [Header("Failed Level Ref")]
     [Tooltip("reference to the game manager")]
     public GameObject gameManager;
-    LevelFailed levelFailed;
+   // LevelFailed levelFailed;
 
     //[Header("Death")]
     //[Tooltip("Ragdoll Game Object")]
@@ -39,9 +39,26 @@ public class HealthUI : MonoBehaviour
     private void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
-        levelFailed = gameManager.gameObject.GetComponent<LevelFailed>();
+     //   levelFailed = gameManager.gameObject.GetComponent<LevelFailed>();
 
-        healthbarSlider = HealthImage;
+        if (SceneSettings.Instance != null)
+        {
+        //    Debug.Log("Instance null".Bold().Color("red"));
+
+            if (SceneSettings.Instance.HealthImage != null)
+            {
+                healthbarSlider = SceneSettings.Instance.HealthImage;
+            }
+
+            if (SceneSettings.Instance.HealthImage == null)
+            {
+                Debug.Log("Health Image is null ".Bold().Color("red"));
+            }
+        }
+
+
+
+       
 
         //anim = GetComponent<Animator>();
 
@@ -49,7 +66,7 @@ public class HealthUI : MonoBehaviour
         {
                                         //THis was moved into the tag check from 1 line above. 
             maxHealth = gameObject.GetComponent<CharacterStats>().maxHealth;
-            Debug.Log("HealthUI ENEMY");
+           // Debug.Log("HealthUI ENEMY");
             Instantiate(uiPrefab,target);
             uiPrefab.SetActive(true);
                        //// healthbarSlider = ui.GetChild(0).GetComponent<Image>();
@@ -69,7 +86,12 @@ public class HealthUI : MonoBehaviour
 
         currentHealth = gameObject.GetComponent<CharacterStats>().currentHealth;
         healthPercent = currentHealth/ maxHealth;
-        healthbarSlider.fillAmount = healthPercent;
+        if (healthbarSlider!= null)
+        {
+           
+            healthbarSlider.fillAmount = healthPercent;
+        }
+     
 
          if (currentHealth <= 0)
         {

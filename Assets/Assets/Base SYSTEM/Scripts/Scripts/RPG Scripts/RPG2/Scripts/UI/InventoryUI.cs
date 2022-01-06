@@ -16,6 +16,7 @@ public class InventoryUI : MonoBehaviour
     public static bool closeOtherUI;
     public NewMurphyMovement murphyMovement;
 
+    [HideInInspector]
     public GameObject player;
 
     Inventory inventory;    // Our current inventory
@@ -34,8 +35,11 @@ public class InventoryUI : MonoBehaviour
         {
             Debug.LogWarning("More than one instance of Inventory found");
         }
+
+
         instance = this; // creating a static variable.
-        murphyMovement = player.GetComponent<NewMurphyMovement>();
+      
+  
 
 
     }
@@ -44,7 +48,13 @@ public class InventoryUI : MonoBehaviour
 
     void Start()
     {
-        murphyMovement = player.GetComponent<NewMurphyMovement>();
+        if (SceneSettings.Instance.humanPlayer != null)
+        {
+            player = SceneSettings.Instance.humanPlayer;
+            murphyMovement = player.GetComponent<NewMurphyMovement>();
+        }
+
+
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;    // Subscribe to the onItemChanged callback
 
@@ -58,8 +68,18 @@ public class InventoryUI : MonoBehaviour
     {
 
         // Check to see if we should open/close the inventory
-        if (Input.GetKeyDown(InventoryButton) && murphyMovement.IsHidden == false)
-        {
+        if (Input.GetKeyDown(InventoryButton) )
+        { 
+            if (murphyMovement == null)
+            {
+                 player = SceneSettings.Instance.humanPlayer;
+                murphyMovement = player.GetComponentInChildren<NewMurphyMovement>();
+            }
+
+            if (murphyMovement.IsHidden == false)
+            {
+
+    
             ShowingInventory = !ShowingInventory;
 
             if (InformationToSave.instance.savedInformation.InventoryList != null)
@@ -94,10 +114,10 @@ public class InventoryUI : MonoBehaviour
                 murphyMovement.isInInventory = true;
 
             }
-           
+
+            }
 
 
-            
         }
 
 

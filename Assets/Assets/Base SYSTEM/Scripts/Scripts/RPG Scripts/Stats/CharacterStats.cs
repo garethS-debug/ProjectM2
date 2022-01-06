@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
 
-
-
-
-
-
-
     /*
      * this script determines damage done to the character.
      *
@@ -89,9 +83,10 @@ public class CharacterStats : MonoBehaviour {
         {
             //HERE THE PLAYER WILL TAKE DAMAGE BASED ON 'CHARACTER COMBAT'S'
 
-            TakeDamage(DamageRecieved);                     // This is the line for taking damage.
+          
           //  StartCoroutine(cameraShake.Shake(.10f, .2f));   //This is the line for shaking the camera on hit.
             DamageRecieved = characterCombat.damageDealt;   // This is the line for determining what damage is taken. Damage recieved by the enemy is the damage recieved from combat.
+            TakeDamage(DamageRecieved);                     // This is the line for taking damage.
             Debug.Log("Damage Recieved" + DamageRecieved);  // Debug Log
         }
 
@@ -118,17 +113,24 @@ public class CharacterStats : MonoBehaviour {
                 HitCounter = 0.01f;
             }
 
-          
+
+
+            this.gameObject.GetComponent<murphyPlayerController>().CameraPrefab.GetComponent<CameraShake>().ShakeCam = true;
 
             // Subtract the armor value
             damage -= armor.GetValue();
             damage = Mathf.Clamp(damage, 0, int.MaxValue);
             // Damage the character
-            StartCoroutine(cameraShake.Shake(.15f, .25f));   //This is the line for shaking the camera on hit. Duration, Magnitude
+            // StartCoroutine(cameraShake.Shake(.15f, .25f));   //This is the line for shaking the camera on hit. Duration, Magnitude
+           
+
             currentHealth -= damage;
             Debug.Log(transform.name + " takes " + damage + " damage.");
             //Start take damage animation
             Debug.Log(this.gameObject.name + "Current health now" + currentHealth);
+
+       
+
             DetectHit.enemyhitDetected = false;
 
             if (OnhealthChanged != null)
@@ -150,7 +152,7 @@ public class CharacterStats : MonoBehaviour {
             this.gameObject.tag = "SleepingEnemy";
             anim.SetBool("isDead", true);
             StartCoroutine("EnemyDeath");
-           
+            Debug.Log( "Dieing now");
         }
 
       

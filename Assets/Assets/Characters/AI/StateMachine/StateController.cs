@@ -71,11 +71,11 @@ public class StateController : MonoBehaviour
     [HideInInspector] public float StartCooldowWaitTime;
 
     [Header("NavMesh")]
-    [HideInInspector] public NavMeshAgent _navMeshAgent;
+   public NavMeshAgent _navMeshAgent;
    public bool resetPath;
 
     [Header("FOV")]
-    [HideInInspector] public EnemyFOV enemyFOV;
+    public EnemyFOV enemyFOV;
     [HideInInspector] public StaffFOV staffFOV;
     [HideInInspector] public PoliceFOV policeFOV;
     [HideInInspector] public CivilianFOV civilianFOV;
@@ -129,9 +129,9 @@ public class StateController : MonoBehaviour
     //public float AttackCoolDown;
     public bool pauseAfterAttack;
     public bool lookAtPlayer;
+    [HideInInspector] public GameObject playerInAttackRange;
+    [HideInInspector] public bool playerWithinAttackrange;
 
-
-   
     //Feet grounder
     [HideInInspector] public Vector3 rightFootPosition, leftFootPosition, leftFootIkPosition, rightFootIkPosition;
     [HideInInspector] public Quaternion leftFootIkRotation, rightFootIkRotation;
@@ -159,7 +159,11 @@ public class StateController : MonoBehaviour
         resetPath = false;
         CharacterStats = this.gameObject.GetComponent<CharacterStats>();
         randomSpot = Random.Range(0, moveLocations.Count);
-        _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
+
+       
+       // _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
+
+
         if (this.gameObject.tag == "Enemy")
         {
             enemyFOV = gameObject.GetComponent<EnemyFOV>();
@@ -191,7 +195,7 @@ public class StateController : MonoBehaviour
 
         AtkCoolDownTimerMax = AtkCoolDownTimer;
 
-        mainCharacher = PlayerManager.instance.player;
+   //     mainCharacher = MurphyPlayerManager.instance.player;
     }
 
     // Update is called once per frame
@@ -241,9 +245,13 @@ public class StateController : MonoBehaviour
         anim.SetFloat("Speed", 0.0f, speedDampTime, Time.deltaTime);
         anim.SetFloat("Direction", direction, DirectionDampTime, Time.deltaTime);
 
-        if (_navMeshAgent != false || isBeingKilled != true)
+        if (_navMeshAgent != false)
         {
-            _navMeshAgent.SetDestination(this.gameObject.transform.position);
+            if (isBeingKilled != true)
+            {
+                _navMeshAgent.SetDestination(this.gameObject.transform.position);
+            }
+         
         }
         
         anim.SetBool("isWalking", false);
@@ -293,16 +301,22 @@ public class StateController : MonoBehaviour
             // if GUARD & player is in fov rotate to player
             if (enemyFOV.PlayerinFOV == true)
             {
-                // Determine which direction to rotate towards
-                Vector3 targetDirection = enemyFOV.LastKnowLOCTransform.position - transform.position;
-                // The step size is equal to speed times frame time.
-                float singleStep = turningSpeed * Time.deltaTime;
-                // Rotate the forward vector towards the target direction by one step
-                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
+                
+                if (enemyFOV.LastKnowLOCTransform != null)
+                {
+                    // Determine which direction to rotate towards
+                    Vector3 targetDirection = enemyFOV.LastKnowLOCTransform.position - transform.position;
+                    // The step size is equal to speed times frame time.
+                    float singleStep = turningSpeed * Time.deltaTime;
+                    // Rotate the forward vector towards the target direction by one step
+                    Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, singleStep, 0.0f);
 
-                // Calculate a rotation a step closer to the target and applies rotation to this object
-                transform.rotation = Quaternion.LookRotation(newDirection);
-                //   transform.LookAt(enemyFOV.LastKnowLOCTransform);
+                    // Calculate a rotation a step closer to the target and applies rotation to this object
+                    transform.rotation = Quaternion.LookRotation(newDirection);
+                    //   transform.LookAt(enemyFOV.LastKnowLOCTransform);
+                }
+
+
             }
 
 
@@ -525,7 +539,7 @@ public class StateController : MonoBehaviour
     #region Attacking
     public void Attack()
     {
-        transform.LookAt(PlayerManager.instance.player.transform);
+        transform.LookAt(playerInAttackRange.transform);
 
         WaitAfterAttack();
 
