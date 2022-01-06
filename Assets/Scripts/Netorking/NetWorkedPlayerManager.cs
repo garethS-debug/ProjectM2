@@ -141,11 +141,11 @@ public class NetWorkedPlayerManager : MonoBehaviour
 
             playerInScene.gameObject.SetActive(true);
 
-   
+                                                                                                                                    //Local reference for THIS cope of the player
             SceneSettings.Instance.humanPlayer = playerInScene;
             SceneSettings.Instance.humanPlayers.Add(playerInScene);
 
-       Debug.Log("Im  " + playerInScene.gameObject.name + " " + "Adding to  " + SceneSettings.Instance.humanPlayer);
+            Debug.Log("Im  " + playerInScene.gameObject.name + " " + "Adding to  " + SceneSettings.Instance.humanPlayer);
 
 
     }

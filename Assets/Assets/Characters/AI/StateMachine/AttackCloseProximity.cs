@@ -17,6 +17,10 @@ public class AttackCloseProximity : Decision
 
     private bool Look(StateController controller)
     {
+        if (controller.enemyFOV.bestTarget != false)
+        {
+
+        
         if (controller.playerWithinAttackrange == true)
         {
             //--- > foreach loop of every human player in scene
@@ -72,6 +76,11 @@ public class AttackCloseProximity : Decision
         }
 
     }
-
+        else
+        {
+            return false;
+        }
+    }
     
+
 }

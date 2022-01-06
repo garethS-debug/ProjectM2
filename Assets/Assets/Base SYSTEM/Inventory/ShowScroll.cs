@@ -30,6 +30,7 @@ public class ShowScroll : MonoBehaviour
     [Header("References")]
     public Transform InventoryCamPOS;
     private Transform playerTransform;
+    [HideInInspector]
     public GameObject player;
     private Animator anim;
  
@@ -39,9 +40,7 @@ public class ShowScroll : MonoBehaviour
 
     private void Awake()
     {
-        playerTransform = player.transform;
-        anim = player.gameObject.GetComponent<Animator>();
-
+        
         originalPos = new Vector3(48.24016f, -20f, -147.0188f);
         resetPOS = ScrollBarContainerObj.gameObject.GetComponent<ResetPOS>();
 
@@ -63,33 +62,70 @@ public class ShowScroll : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (SceneSettings.Instance.humanPlayer != null)
+        {
+            player = SceneSettings.Instance.humanPlayer;
+            playerTransform = player.transform;
+            anim = player.gameObject.GetComponent<Animator>();
+        }
+    }
 
     public void ShowBars()
     {
+
+        if (anim == null)
+        {
+            player = SceneSettings.Instance.humanPlayer;
+            playerTransform = player.transform;
+            anim = player.gameObject.GetComponentInChildren<Animator>();
+        }
+
+
         print("Show Bars");
         ScrollBarContainerObj.SetActive(true);
 
         //Kneeling animation
         anim.SetBool("isKneeling", true);
 
+
         //Create Backpack
+        if (BackPackspawnPoint == null)
+        {
+            player = SceneSettings.Instance.humanPlayer;
+            BackPackspawnPoint = player.GetComponentInChildren<murphyPlayerController>().backPackSpawnPoint.transform;
+        }
         Instantiate(BackPack, BackPackspawnPoint.position, BackPackspawnPoint.transform.rotation);
         tempBackpack = GameObject.FindGameObjectWithTag("BackPack");
 
+
+
         //OverShoulder Camera
+        /*
+        if (UICamera == null || InventoryCamPOS == null || playerTransform == null)
+        {
+            player = SceneSettings.Instance.humanPlayer;
+            playerTransform = player.transform;
+            InventoryCamPOS = player.GetComponentInChildren<murphyPlayerController>().inventoryCamPOS.transform;
+        }
         UICamera.enabled = true;
         UICamera.transform.position = InventoryCamPOS.transform.position;
         UICamera.transform.LookAt(playerTransform);
 
         MainCamera.enabled = false;
+          */
         disablePickup.SetActive(false);
         disableDialog.SetActive(false);
         disableHealth.SetActive(false);
+      
+        
+        
         //  disableNoise.SetActive(false);
         // ScrollBarAnimator.SetTrigger("ShowScroll");
         //  StartCoroutine(Show());
 
-        SceneSettings.Instance.humanPlayer.gameObject.GetComponent<NewMurphyMovement>().enabled = false;
+        SceneSettings.Instance.humanPlayer.gameObject.GetComponentInChildren<murphyPlayerController>().enabled = false;
     }
 
 
@@ -134,16 +170,17 @@ public class ShowScroll : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
        
+        /*
 
-       // ScrollBarContainerObj.SetActive(false);
         UICamera.enabled = false;
         MainCamera.enabled = true;
+        */
         disablePickup.SetActive(true);
         disableDialog.SetActive(false);
         disableHealth.SetActive(true);
-       // disableNoise.SetActive(true);
         ScrollBarContainerObj.SetActive(false);
-        SceneSettings.Instance.humanPlayer.gameObject.GetComponent<NewMurphyMovement>().enabled = true;
+
+        SceneSettings.Instance.humanPlayer.gameObject.GetComponentInChildren<murphyPlayerController>().enabled = true;
     }
 
     private IEnumerator Show()

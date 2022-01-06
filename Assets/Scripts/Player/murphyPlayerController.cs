@@ -71,6 +71,12 @@ public class murphyPlayerController : MonoBehaviour
 	[Header("Death")]
 	[HideInInspector] public bool isDead;
 
+	[Header("ReferencesToChildGO")]
+	public GameObject backPackSpawnPoint;
+	public GameObject pickupLOC;
+	public GameObject inventoryCamPOS;
+	public GameObject thisPlayer;
+	public SkinnedMeshRenderer skinMesh;
 
 	private void Awake()
 	{

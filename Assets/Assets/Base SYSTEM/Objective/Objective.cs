@@ -24,7 +24,7 @@ public class Objective : MonoBehaviour
     public TextMeshProUGUI spottedScore;
 
     [Header("References")]
-    public GameObject player;
+   // public GameObject player;                                                         //Unable to directly reference in multiplayer
     public GameObject target;
 
     public GameObject ObjectiveGO;
@@ -111,8 +111,9 @@ public class Objective : MonoBehaviour
 
     void Start()
     {
+        /*                                                          //-- Removed -- 06/01/2021
 
-        if (player == null)
+        if (player == null)                                      //Unable to directly reference in multiplayer
         {
             if (SceneSettings.Instance.humanPlayer != null)
             {
@@ -125,17 +126,13 @@ public class Objective : MonoBehaviour
                 Debug.Log("Human player not available");
             }
            // break;
+        
          }
      
+        */
 
-        //foreach (GameObject moneyBag in MoneyBags)
-        //{
-        //   if ( moneyBag.name == ("Money Bag"))
-        //    {
-        //        MaxScore += 100;
-        //    }
-        //}
-
+        //-- Removed -- 06/01/2021
+        /*
         if (Objective.instance != null)
         {
             //      targetPosition = ObjectiveTransform.transform.position;
@@ -145,12 +142,10 @@ public class Objective : MonoBehaviour
             }
 
         }
-
+        */
         isAlarmRaised = false;
-     //   Score = 1000.00f;
-
-       // TaskMenu.gameObject.SetActive(false);
         TaskMenuActive = false;
+
         if (TaskMenu != null)
         {
             TaskmenuAnim = TaskMenu.gameObject.GetComponent<Animator>();
@@ -159,28 +154,9 @@ public class Objective : MonoBehaviour
 
         InformationToSave.instance.SaveLevelInformation();
 
-
-
-
-
-
-        if (levelInformation.hasKeyLocation == true /*&& isThisAMainHeist == true*/)
-        {
-         //   compassContainer.gameObject.SetActive(true);
-        }
-
-        if (levelInformation.hasKeyLocation == false /*&& isThisAMainHeist == true*/)
-        {
-            //If this is the main heist and we have the 'food event' item, then activate the food event script for this level.
-          //  compassContainer.gameObject.SetActive(false);
-        }
-
-
-
-
+       
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -192,12 +168,10 @@ public class Objective : MonoBehaviour
             {
                 TaskmenuAnim.SetBool("isOpenFile", true);
                 TaskmenuAnim.SetBool("isCloseFile", false);
-                //  TaskMenu.gameObject.SetActive(true);
             }
 
             if (TaskMenuActive == false)
             {
-                //  TaskMenu.gameObject.SetActive(false);
                 TaskmenuAnim.SetBool("isCloseFile", true);
                 TaskmenuAnim.SetBool("isOpenFile", false);
             }
@@ -215,32 +189,18 @@ public class Objective : MonoBehaviour
 
         if (isAlarmRaised == true)
         {
-            //Show popup
-            tutorialPopUpbox.tutorialPopUp();
+                                                      
+            tutorialPopUpbox.tutorialPopUp();                                                                         //Show popup
         }
 
-        // Vector3 toPosition = targetPosition;
-        // Vector3 fromPosition = Player.transform.position;   
-        // fromPosition.z = 0f;
-        // Vector3 dir = (toPosition - fromPosition).normalized;
-        //float angle = GetAngleFromVectorFloat(dir);
 
-        // print(angle);
-
-        // pointerRectTransform.localEulerAngles = new Vector3(0, 0, angle - compensate);
-
-        
+        /*      //-- Compas Removed -- 06/01/2021
 
         Vector3 dir = transform.InverseTransformDirection(player.transform.position - target.transform.position);
         float angle = Mathf.Atan2(-dir.x, dir.z) * Mathf.Rad2Deg;
         compas.transform.eulerAngles = new Vector3(0, 0, angle-180f);
+        */
 
-
-        //if (SceneLoad.instance.GameIsOver != true && Score >= 0.1f)
-        //{
-        //    Score -= 1.5f * Time.deltaTime;
-        //}
-       
 
     }
 
@@ -256,16 +216,16 @@ public class Objective : MonoBehaviour
     public void UpdateObjectiveMarker(GameObject ObjectiveGO)
     {
 
-        //Update Main Icon
+                                                                                                                        //Update Main Icon
         MainObj.sprite = UIMainObjective_Door;
         target = ObjectiveGO;
-        //Update Desired Object
+                                                                                                                          //Update Desired Object
     }
 
 
-    //This determine level score
+    
 
-    public void UpdateScorePenelty(float penetlies)
+    public void UpdateScorePenelty(float penetlies)                                                                         //This determine level score
     {
         updatingScore = true;
 
