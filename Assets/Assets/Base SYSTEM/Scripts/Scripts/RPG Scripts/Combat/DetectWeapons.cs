@@ -26,7 +26,7 @@ public class DetectWeapons : MonoBehaviour
 
 
     //COMBAT 
-    PlayerManager playerManager;
+    MurphyPlayerManager playerManager;
     CharacterStats myStats;
     public static bool StartEnemyAttack = false;
     static Animator anim;
@@ -39,7 +39,7 @@ public class DetectWeapons : MonoBehaviour
         enemyhitDetected = false;
 
         //COMBAT
-        playerManager = PlayerManager.instance; //Rerence to the player
+        playerManager = MurphyPlayerManager.instance; //Rerence to the player
         myStats = GetComponent<CharacterStats>();
 
         //Animator
@@ -152,7 +152,7 @@ public class DetectWeapons : MonoBehaviour
                                                // THEN SWITCH 
                                                //enemyhitDetected = false;
         //CharacterStats.damageTrigger = true; //
-        CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>(); //Initiate combat?
+        CharacterCombat playerCombat = SceneSettings.Instance.humanPlayer.GetComponent<CharacterCombat>(); //Initiate combat?
         playerCombat.Attack(myStats); //attacking Enemy Character stats
 
         //Chase.damageAnim = true;

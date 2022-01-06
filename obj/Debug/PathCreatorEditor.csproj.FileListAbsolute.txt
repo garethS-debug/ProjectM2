@@ -356,3 +356,7 @@
 /Users/garethswarte/Documents/DET/obj/Debug/PathCreatorEditor.csproj.CopyComplete
 /Users/garethswarte/Documents/DET/obj/Debug/PathCreatorEditor.dll
 /Users/garethswarte/Documents/DET/obj/Debug/PathCreatorEditor.pdb
+C:\Users\garet\Documents\GitHub\ProjectM2\obj\Debug\PathCreatorEditor.csproj.AssemblyReference.cache
+C:\Users\garet\Documents\GitHub\ProjectM2\obj\Debug\PathCreatorEditor.csproj.CoreCompileInputs.cache
+C:\Users\garet\Documents\GitHub\ProjectM2\obj\Debug\PathCreatorEditor.dll
+C:\Users\garet\Documents\GitHub\ProjectM2\obj\Debug\PathCreatorEditor.pdb

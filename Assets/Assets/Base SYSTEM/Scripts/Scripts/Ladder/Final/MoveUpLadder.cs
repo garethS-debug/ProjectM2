@@ -43,7 +43,7 @@ public class MoveUpLadder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PLayer = PlayerManager.instance.player;
+        PLayer = SceneSettings.Instance.humanPlayer;
         distanceTraveled = startingDistance;
         anim = PLayer.gameObject.GetComponent<Animator>();
     }

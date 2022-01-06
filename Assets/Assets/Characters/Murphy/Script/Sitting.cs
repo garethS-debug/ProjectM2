@@ -59,11 +59,16 @@ public class Sitting : MonoBehaviour
     
       //  SitCam.SetActive(false);
 
-        player = PlayerManager.instance.player.transform;
+        if (SceneSettings.Instance.humanPlayer != null)
+        {
+            player = SceneSettings.Instance.humanPlayer.transform;
+            anim = player.gameObject.GetComponent<Animator>();            // get the animator component attached to enemy
+        }
+
         interactionTransform = this.gameObject.transform;
         PickUpTextBox = GameObject.FindGameObjectWithTag("ItemPickUpText");
         cameraOnRails = TheCamera.gameObject.GetComponent<CameraOnRails>();
-        anim = player.gameObject.GetComponent<Animator>();            // get the animator component attached to enemy
+     
     }
 
     // Update is called once per frame

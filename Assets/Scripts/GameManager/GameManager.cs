@@ -10,9 +10,14 @@ public class GameManager : MonoBehaviourPunCallbacks
 {
 
     public LevelInfoSO levelInfo;
-
-
     public SceneReference levelToLoad;
+
+
+    public void Start()
+    {
+        //Check existing save file
+    }
+
 
 
     /// <summary>
@@ -23,6 +28,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         levelInfo.pointsGainedInLevel += 10;
 
     }
+
+
 
     public void OnClick_LeaveLevel()
     {
@@ -41,4 +48,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         base.OnLeftRoom();
 
     }
+
+
+
 }

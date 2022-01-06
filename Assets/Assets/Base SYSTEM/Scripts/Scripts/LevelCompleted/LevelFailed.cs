@@ -76,7 +76,7 @@ public class LevelFailed : MonoBehaviour
     public void Retry()
     {
        
-        PlayerManager.instance.ResartLevel();
+        MurphyPlayerManager.instance.ResartLevel();
     }
 
     public void Menu()

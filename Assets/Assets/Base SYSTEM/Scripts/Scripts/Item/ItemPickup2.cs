@@ -31,8 +31,11 @@ public class ItemPickup2 : Interacting
 
     private void Start()
     {
+        if (SceneSettings.Instance.humanPlayer != null)
+        {
+            player = SceneSettings.Instance.humanPlayer.transform;
+        }
 
-        player = PlayerManager.instance.player.transform;
         interactionTransform = this.gameObject.transform;
         //if (PickupText != null)
         //{

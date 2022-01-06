@@ -11,29 +11,29 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main_menu.unity
     guid: 4684c91e2c4ab4a6d9c67d34a0911f91
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets/Scenes/HubWorld/Hub World.unity
     guid: 317d551128fbb4504824921a472d2b85
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets/Scenes/level select/Level Select.unity
     guid: 2d392d2abff484183903161f62be9d51
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets/Scenes/level select/Planning Level Select.unity
     guid: 88783e76ab8d941468b9261820912bab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets/Scenes/Bank_Level_1/Bank_Planning_Level/Bank_Planning_Level/Bank_Planning_Level.unity
     guid: c20e896afa6794dbb98b4306212bfa8e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets/Scenes/Bank_Level_1/Bank_Planning_Level/Old/Bank_Level_1_Planning_Level.unity
     guid: fdbf139e00e8f4314ac99d228808bef5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Assets/Scenes/Bank_Level_1/Bank_Level_1/Main Level Scene/Bank_Main_Level.unity
     guid: 6c22aa400436946cc8c23fb9b6d80483
   - enabled: 1
-    path: Assets/Assets/Scenes/Tutorial/Tutorial 1.unity
+    path: Assets/Scenes/Levels/Tutorial/Tutorial 1.unity
     guid: cc24eb040cacb734494959cf665c6b95
-  - enabled: 1
-    path: Assets/Assets/Scenes/Tutorial/Tutorial 2.unity
+  - enabled: 0
+    path: Assets/Assets/Scenes/Tutorial/Tutorial X.unity
     guid: 704ca433ebc126e448aa517e96383700
   - enabled: 1
     path: Assets/Scenes/ConnectToServer.unity

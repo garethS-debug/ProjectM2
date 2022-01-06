@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using ExitGames.Client.Photon;
-
+using Steamworks; 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
 
@@ -64,6 +64,12 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     ExitGames.Client.Photon.Hashtable table = new ExitGames.Client.Photon.Hashtable();
 
+    /// <summary>
+    /// steam 
+    /// </summary>
+    [Header("Steam")]
+    public SteamLobbyManager steamLobbyManager;
+
 
     public void Awake()
     {
@@ -77,44 +83,49 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     //When lobby scene loads up we need a lobby to create a room
     public void Start()
     {
-       
+     
 
-       // if (!PhotonNetwork.IsConnected)
-       // {
-            PhotonNetwork.JoinLobby();
+        /// <summary>
+        /// steam 
+        /// </summary>
+      
+       // steamLobbyManager = this.gameObject.GetComponent<SteamLobbyManager>();
+
+
+        // if (!PhotonNetwork.IsConnected)
+        // {
+        PhotonNetwork.JoinLobby();
        // }
 
 
         maxPlayerCount = 1;
     }
 
-    
+
+    //When the player accepts the invite
+    //Create a void to join the game. Then start the void with the connection string.
+
+
+
     public void OnClickCreate()
     {
         if (roomInputField.text.Length >= 1)                                    //If there is not a blank room name
         {
 
 
-        //    PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions() { MaxPlayers = System.Convert.ToByte(maxPlayerCount), BroadcastPropsChangeToAll = true });
 
+            //create room with photon
             CreateRoom(roomInputField.text, maxPlayerCount, passwordField.text);
-            //if (public_Toggle.isOn)
-            //{
-            //                                        //Name of room     room options                                                             //Send all property changes
 
-            //    PhotonNetwork.CreateRoom(roomInputField.text, new RoomOptions() { MaxPlayers = System.Convert.ToByte(maxPlayerCount),  BroadcastPropsChangeToAll = true});
-            //}
-
-            //if (private_Toggle.isOn)
-            //{
+            if (SceneSettings.Instance.enableSteamSetttings == true)
+            {
 
 
-            //ExitGames.Client.Photon.Hashtable table = new ExitGames.Client.Photon.Hashtable();
-            //    string Password = passwordField.text;
-            //    table.Add("secret", Password);
-            //    RoomOptions roomOptions = new RoomOptions();
-            //    roomOptions.CustomRoomProperties = table;
-            //}
+                //create room with steam  -- TO DO ADD ROOM TYPE
+                steamLobbyManager.steam_HostLobby(ELobbyType.k_ELobbyTypePublic, maxPlayerCount);
+            }
+
+
         }
 
 
@@ -122,29 +133,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
 
     public void CreateRoom(string _name, int _maxplayers, string _password)
     {
-        /*
-        RoomOptions roomoption = new RoomOptions();
-        
-        roomoption.MaxPlayers = System.Convert.ToByte(_maxplayers);
-        roomoption.BroadcastPropsChangeToAll = true;
-       // roomoption.IsVisible = true;
-      
-
-        table.Add(RoomProperty.Password, _password);
-        table.Add(RoomProperty.RoomName, _name);
-
-
-        //Exposing to outside players
-        roomoption.CustomRoomPropertiesForLobby = new string[]
-        {
-        RoomProperty.RoomName,
-        RoomProperty.Map,
-        RoomProperty.Password
-        };
-
-        PhotonNetwork.CreateRoom(name, roomoption);
-        */
-
 
 
 
@@ -537,6 +525,21 @@ public class LobbyManager : MonoBehaviourPunCallbacks
          PhotonNetwork.CloseConnection(playerToKick);
 
   
+    }
+
+
+    public bool CheckIfHost()
+    {
+
+        if (PhotonNetwork.IsMasterClient == true)
+        {
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
     }
 
 

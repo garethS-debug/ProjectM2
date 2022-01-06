@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class Enemy : Interacting
 {
-    PlayerManager playerManager;
+    MurphyPlayerManager playerManager;
     CharacterStats myStats;
     public static bool StartEnemyAttack = false;
 
@@ -19,7 +19,7 @@ public class Enemy : Interacting
 
     void Start()
     {
-        playerManager = PlayerManager.instance; //Rerence to the player
+        playerManager = MurphyPlayerManager.instance; //Rerence to the player
         myStats = GetComponent<CharacterStats>();
     }
 
@@ -37,7 +37,7 @@ public class Enemy : Interacting
             CharacterStats.damageTrigger = true; //THIS IS THE BOOL FOR DOING DAMANGE TO A CHARACTER
             print("Y was pressed"); 
             base.Interact(); //Interact Method from interaction.cs
-            CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>(); //Initiate combat?
+            CharacterCombat playerCombat = SceneSettings.Instance.humanPlayer.GetComponent<CharacterCombat>(); //Initiate combat?
             playerCombat.Attack(myStats); //attacking Enemy stats
             Chase.damageAnim = true;
         }

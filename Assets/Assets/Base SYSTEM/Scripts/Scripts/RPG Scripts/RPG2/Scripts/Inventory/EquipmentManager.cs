@@ -117,6 +117,11 @@ public class EquipmentManager : MonoBehaviour
             onEquipmentChanged.Invoke(newItem, oldItem);
         }
 
+        if (targetMesh == null)
+        {
+            targetMesh = SceneSettings.Instance.humanPlayer.GetComponentInChildren<murphyPlayerController>().skinMesh;
+        }
+
         currentEquipment[slotIndex] = newItem;
         SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
         newMesh.transform.parent = targetMesh.transform;//instantiate object

@@ -37,6 +37,8 @@ TagManager:
   - ObjectOfInterest
   - PickupBody
   - HideBody
+  - PlayerManager
+  - spawnPoint
   layers:
   - Default
   - TransparentFX

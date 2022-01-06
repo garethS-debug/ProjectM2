@@ -23,6 +23,7 @@ public class Interacting : MonoBehaviour {
     public Transform interactionTransform;  // The transform from where we interact in case you want to offset it
     bool isFocus = false;   // Is this interactable currently being focused?
     bool hasInteracted = false; // Have we already interacted with the object?
+    [HideInInspector]
     public Transform player; // Reference to the player transform
 
     //public Interaction focus; // what is currently being focused 
@@ -31,7 +32,8 @@ public class Interacting : MonoBehaviour {
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = SceneSettings.Instance.humanPlayer.transform;
+       
     }
 
     void Update()

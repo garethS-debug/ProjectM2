@@ -69,7 +69,7 @@ public class ItemBluePrint : ScriptableObject
             if (consumeHealth > 0.1f )
             {
               
-                PlayerStats TempHealthLog = PlayerManager.instance.player.gameObject.GetComponent < PlayerStats>();
+                PlayerStats TempHealthLog = SceneSettings.Instance.humanPlayer.gameObject.GetComponent < PlayerStats>();
 
                 if (TempHealthLog.currentHealth > 0 && TempHealthLog.currentHealth < TempHealthLog.maxHealth)
                 {
@@ -92,11 +92,11 @@ public class ItemBluePrint : ScriptableObject
            // Objective.instance.Cash += itemValue;
            if (Objective.instance != null)
             {
-                Objective.instance.CashPrize(itemValue + PlayerManager.instance.PlayerStats.wealthMod.GetValue()); //Update Level Cash Value
-                Debug.Log("CASH PICKED UP" + itemValue + PlayerManager.instance.PlayerStats.wealthMod.GetValue());
+                Objective.instance.CashPrize(itemValue + MurphyPlayerManager.instance.PlayerStats.wealthMod.GetValue()); //Update Level Cash Value
+                Debug.Log("CASH PICKED UP" + itemValue + MurphyPlayerManager.instance.PlayerStats.wealthMod.GetValue());
             }
             
-            InformationToSave.instance.SaveGlobalScore(itemValue + PlayerManager.instance.PlayerStats.wealthMod.GetValue());//Update Global Cash Value
+            InformationToSave.instance.SaveGlobalScore(itemValue + MurphyPlayerManager.instance.PlayerStats.wealthMod.GetValue());//Update Global Cash Value
 
             Debug.Log("ADD CASH Effect"); //CONSUME HEALTH
             Inventory.instance.Remove(this);
