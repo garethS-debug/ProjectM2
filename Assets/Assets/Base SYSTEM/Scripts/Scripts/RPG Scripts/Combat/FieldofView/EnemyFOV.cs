@@ -173,7 +173,7 @@ public class EnemyFOV : MonoBehaviour
         {
 
             LastKnownFOVLOC.RemoveRange(0, 2);
-        } 
+        }
 
 
 
