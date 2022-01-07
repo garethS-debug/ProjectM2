@@ -7715,8 +7715,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 412460979}
   - {fileID: 412460978}
+  - {fileID: 412460979}
   sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -7752,7 +7752,7 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 1
+    SynchronizeType: 2
     Name: isWalking
   - Type: 4
     SynchronizeType: 0
@@ -45044,6 +45044,7 @@ MonoBehaviour:
   rightFootAnimVariableName: RightFootCurve
   useProIkFeature: 0
   showSolverDebug: 1
+  PV: {fileID: 0}
 --- !u!1 &1213799606
 GameObject:
   m_ObjectHideFlags: 0
@@ -92340,6 +92341,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54d53ba97899544feaf92f5bc1941d3b, type: 3}
+--- !u!1 &5076111074746181105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3841593806781737038, guid: 54d53ba97899544feaf92f5bc1941d3b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5076111074746181104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5076111074746181106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076111074746181105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &5076111074746181107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5076111074746181105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 5076111074746181106}
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &5913495594160552764
 PrefabInstance:
   m_ObjectHideFlags: 0

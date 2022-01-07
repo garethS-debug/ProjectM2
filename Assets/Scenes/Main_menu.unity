@@ -352,13 +352,14 @@ MonoBehaviour:
   isMultiPlayer: 1
   connectionType: 0
   humanPlayer: {fileID: 0}
-  ghostPlayer: {fileID: 0}
   playerdistance: 0
+  humanPlayers: []
   steamSettings: {fileID: 1855890030}
   enableSteamSetttings: 0
   NextScene:
     sceneAsset: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
     scenePath: Assets/Scenes/ConnectToServer.unity
+  HealthImage: {fileID: 0}
   DebugMode: 0
 --- !u!114 &106917333
 MonoBehaviour:

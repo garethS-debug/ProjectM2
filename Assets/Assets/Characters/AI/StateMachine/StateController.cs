@@ -154,7 +154,8 @@ public class StateController : MonoBehaviour
 
     //Photon
     [Header("Photon Settings")]
-    PhotonView PV;
+    [HideInInspector]
+    public  PhotonView PV;
 
     // Start is called before the first frame update
     void Start()
@@ -163,11 +164,12 @@ public class StateController : MonoBehaviour
         resetPath = false;
         CharacterStats = this.gameObject.GetComponent<CharacterStats>();
        
-        randomSpot = Random.Range(0, moveLocations.Count);
 
         //Photon
         PV = PhotonView.Get(this);
-        PV.RPC("RPC_RandomLocation", RpcTarget.All); // reset puzzle
+        //Choose Random Patrol Point
+
+   
 
 
         // _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
@@ -176,6 +178,11 @@ public class StateController : MonoBehaviour
         if (this.gameObject.tag == "Enemy")
         {
             enemyFOV = gameObject.GetComponent<EnemyFOV>();
+            if (PhotonNetwork.IsMasterClient)
+            {
+
+                M_ChooseRandomPatrolPoint();
+            }
         }
 
         if (this.gameObject.tag == "Staff")
@@ -206,6 +213,8 @@ public class StateController : MonoBehaviour
 
    //     mainCharacher = MurphyPlayerManager.instance.player;
     }
+
+ 
 
     // Update is called once per frame
     void Update()
@@ -1056,5 +1065,23 @@ void OnDrawGizmosSelected()
     #endregion
 
 
+    public void M_ChooseRandomPatrolPoint()
+    {
+        //Photon
+        if (PV.Owner.IsMasterClient)
+        {
+            Debug.Log("I am master".Bold().Color("green"));
+            randomSpot = Random.Range(0, moveLocations.Count);
+            PV.RPC("RPC_RandomPatrol", RpcTarget.AllViaServer,randomSpot); // choose new piece
+
+        }
+    }
+
+    [PunRPC]
+    void RPC_RandomPatrol(int randomNO)
+    {
+        randomSpot = randomNO;
+        print("randomized spot = ".Color("orange") + randomSpot + "randomNO = " + randomNO);
+    }
 
 }

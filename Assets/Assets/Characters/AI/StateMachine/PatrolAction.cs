@@ -49,7 +49,8 @@ public class PatrolAction : Action
             if (controller.waitTime <= 0)
             {
                 //change the random location
-                controller.randomSpot = Random.Range(0, controller.moveLocations.Count);
+                //  controller.randomSpot = Random.Range(0, controller.moveLocations.Count);   //replaced with Photon random
+                controller.M_ChooseRandomPatrolPoint();
                 controller.waitTime = controller.StartWaitTime;
 
             }
@@ -63,13 +64,14 @@ public class PatrolAction : Action
         if (Vector3.Distance(controller.transform.position, controller.moveLocations[controller.randomSpot].position) > 1.0f)
         {
             controller.walking();
-          
-            controller._navMeshAgent.SetDestination(controller.moveLocations[controller.randomSpot].position);
+
+             controller._navMeshAgent.SetDestination(controller.moveLocations[controller.randomSpot].position); //replaced with Photon random
+           // controller.M_ChooseRandomPatrolPoint();
 
             // transform.LookAt(moveLocations[randomSpot].position);
             // _navMeshAgent.destination = moveLocations[randomSpot].position;
 
-            Debug.Log("Walking to Patrol Point");
+         //   Debug.Log("Walking to Patrol Point");
         }
 
 
