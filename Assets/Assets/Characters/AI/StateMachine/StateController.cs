@@ -166,8 +166,9 @@ public class StateController : MonoBehaviour
         randomSpot = Random.Range(0, moveLocations.Count);
 
         //Photon
-        PV = GetComponent<PhotonView>();
-        photonView.RPC("RPC_SelectPuzzlePiece", RpcTarget.All, randomSpot);
+        PV = PhotonView.Get(this);
+        PV.RPC("RPC_RandomLocation", RpcTarget.All); // reset puzzle
+
 
         // _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
 
