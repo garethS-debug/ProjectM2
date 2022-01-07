@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
+using Photon.Realtime;
+using Photon.Pun;
 
 public class StateController : MonoBehaviour
 {
@@ -150,18 +152,24 @@ public class StateController : MonoBehaviour
     public bool showSolverDebug = true;
 
 
-
-
+    //Photon
+    [Header("Photon Settings")]
+    PhotonView PV;
 
     // Start is called before the first frame update
     void Start()
     {
+
         resetPath = false;
         CharacterStats = this.gameObject.GetComponent<CharacterStats>();
+       
         randomSpot = Random.Range(0, moveLocations.Count);
 
-       
-       // _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
+        //Photon
+        PV = GetComponent<PhotonView>();
+        photonView.RPC("RPC_SelectPuzzlePiece", RpcTarget.All, randomSpot);
+
+        // _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
 
 
         if (this.gameObject.tag == "Enemy")
