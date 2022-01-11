@@ -7696,139 +7696,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3198800516871085149}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &412460977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412460976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 412460978}
-  - {fileID: 412460979}
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &412460978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412460976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!114 &412460979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 412460976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 4
-    SynchronizeType: 2
-    Name: isWalking
-  - Type: 4
-    SynchronizeType: 0
-    Name: isBackward
-  - Type: 4
-    SynchronizeType: 0
-    Name: Turning_Right
-  - Type: 4
-    SynchronizeType: 0
-    Name: Turning_Left
-  - Type: 4
-    SynchronizeType: 0
-    Name: isHit
-  - Type: 4
-    SynchronizeType: 1
-    Name: isAttacking
-  - Type: 4
-    SynchronizeType: 0
-    Name: isSneaking
-  - Type: 4
-    SynchronizeType: 0
-    Name: isCrouched
-  - Type: 4
-    SynchronizeType: 0
-    Name: isSneakingBackwards
-  - Type: 1
-    SynchronizeType: 2
-    Name: Direction
-  - Type: 1
-    SynchronizeType: 2
-    Name: Speed
-  - Type: 1
-    SynchronizeType: 2
-    Name: Angle
-  - Type: 4
-    SynchronizeType: 0
-    Name: Jump
-  - Type: 1
-    SynchronizeType: 0
-    Name: JumpCurve
-  - Type: 4
-    SynchronizeType: 0
-    Name: isSneakAttack
-  - Type: 1
-    SynchronizeType: 0
-    Name: Sneak
-  - Type: 4
-    SynchronizeType: 0
-    Name: isSneakWalking
-  - Type: 1
-    SynchronizeType: 1
-    Name: HitCounter
-  - Type: 1
-    SynchronizeType: 1
-    Name: AttackCounter
-  - Type: 4
-    SynchronizeType: 1
-    Name: isLooking
-  - Type: 4
-    SynchronizeType: 1
-    Name: isAlerted
-  - Type: 4
-    SynchronizeType: 1
-    Name: isBeingStealthKilled
-  - Type: 4
-    SynchronizeType: 1
-    Name: IsEating
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
---- !u!195 &412460984 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 3198800517275305903, guid: 403b7e33be48711458daa173876fcd75,
-    type: 3}
-  m_PrefabInstance: {fileID: 3198800516871085149}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &412725544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3610628163433074663, guid: 8f31fa681be324a42af8786e0cc5a702,
@@ -91544,10 +91411,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 302926104}
     m_Modifications:
-    - target: {fileID: 3198800516195296599, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.12
+    - target: {fileID: 412460977, guid: 403b7e33be48711458daa173876fcd75, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 412460979, guid: 403b7e33be48711458daa173876fcd75, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[4].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 412460979, guid: 403b7e33be48711458daa173876fcd75, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[5].SynchronizeType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 412460979, guid: 403b7e33be48711458daa173876fcd75, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[21].SynchronizeType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3198800517079083526, guid: 403b7e33be48711458daa173876fcd75,
         type: 3}
@@ -91619,94 +91497,12 @@ PrefabInstance:
       propertyPath: HealthImage
       value: 
       objectReference: {fileID: 1996046394}
-    - target: {fileID: 3198800517275305901, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3198800517275305902, guid: 403b7e33be48711458daa173876fcd75,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 791928889}
-    - target: {fileID: 3198800517275305904, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: cameraShake
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305904, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: damage.baseValue
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305905, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305907, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: damageDealt
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305909, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305909, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305910, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305911, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: _navMeshAgent
-      value: 
-      objectReference: {fileID: 412460984}
-    - target: {fileID: 3198800517275305915, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3198800517275305915, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: damage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865035083549023883, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: m_Name
-      value: Security Guard_Distraction
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249773631494545388, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 12.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249773631494545388, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 7249773631494545388, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 7574730019102944408, guid: 403b7e33be48711458daa173876fcd75,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.85
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3198800517275305905, guid: 403b7e33be48711458daa173876fcd75, type: 3}
-    - {fileID: 3198800517275305910, guid: 403b7e33be48711458daa173876fcd75, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 403b7e33be48711458daa173876fcd75, type: 3}
 --- !u!1001 &3386265924049078195
 PrefabInstance:

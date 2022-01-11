@@ -50,6 +50,7 @@ public class PatrolAction : Action
             {
                 //change the random location
                 //  controller.randomSpot = Random.Range(0, controller.moveLocations.Count);   //replaced with Photon random
+
                 controller.M_ChooseRandomPatrolPoint();
                 controller.waitTime = controller.StartWaitTime;
 

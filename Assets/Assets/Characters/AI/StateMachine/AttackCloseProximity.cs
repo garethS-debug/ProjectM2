@@ -43,10 +43,10 @@ public class AttackCloseProximity : Decision
             {
                 controller.enemyFOV.playerPOS = Vector3.Distance(controller.enemyFOV.bestTarget.transform.position, controller.transform.position);
 
-                Debug.Log("player not close proximity ".Bold().Color("red") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
-                Debug.Log("Is player dead? ".Bold().Color("red") + controller.enemyFOV.bestTarget.GetComponent<murphyPlayerController>().isDead);
+            //    Debug.Log("player not close proximity ".Bold().Color("red") + "attack range " + controller.enemyFOV.attackRange + "Player POS " + controller.enemyFOV.playerPOS);
+             //   Debug.Log("Is player dead? ".Bold().Color("red") + controller.enemyFOV.bestTarget.GetComponent<murphyPlayerController>().isDead);
 
-                Debug.Log("Player POS? ".Bold().Color("red") + controller.enemyFOV.playerPOS);
+             //   Debug.Log("Player POS? ".Bold().Color("red") + controller.enemyFOV.playerPOS);
                 //  Debug.Log("player POS : " + controller.enemyFOV.playerPOS);
                 //   Debug.Log("Attack Range : " + controller.enemyFOV.attackRange);
                 // Debug.Log("PLayerNOTInAttackRange");

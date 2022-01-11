@@ -157,6 +157,10 @@ public class StateController : MonoBehaviour
     [HideInInspector]
     public  PhotonView PV;
 
+
+    [Header("LineColor (Debug)")]
+    private LineRenderer lineRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -169,7 +173,8 @@ public class StateController : MonoBehaviour
         PV = PhotonView.Get(this);
         //Choose Random Patrol Point
 
-   
+        //debug 
+        lineRenderer = this.GetComponent<LineRenderer>();
 
 
         // _navMeshAgent = GetComponent<NavMeshAgent>(); //REference to the Navmesh Agent
@@ -222,6 +227,11 @@ public class StateController : MonoBehaviour
 
             currentState.UpdateState(this);
           OnDrawGizmosSelected();
+
+
+
+
+
         //where is the player
 
         //if (_navMeshAgent.hasPath)
@@ -1068,12 +1078,22 @@ void OnDrawGizmosSelected()
     public void M_ChooseRandomPatrolPoint()
     {
         //Photon
-        if (PV.Owner.IsMasterClient)
+        if (PhotonNetwork.IsMasterClient)
         {
+
+            //DEBUG
+            lineRenderer.endColor = currentState.sceneGizmoColor;
+
+
             Debug.Log("I am master".Bold().Color("green"));
             randomSpot = Random.Range(0, moveLocations.Count);
             PV.RPC("RPC_RandomPatrol", RpcTarget.AllViaServer,randomSpot); // choose new piece
 
+        }
+
+        else 
+        {
+            lineRenderer.endColor = Color.green;
         }
     }
 

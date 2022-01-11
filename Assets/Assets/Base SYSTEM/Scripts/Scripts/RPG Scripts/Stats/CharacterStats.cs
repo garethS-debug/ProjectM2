@@ -60,6 +60,8 @@ public class CharacterStats : MonoBehaviour {
 
     public static bool damageTrigger = false;
 
+    CameraShake camShake;
+
     // Set current health to max health
     // when starting the game.
     void Awake()
@@ -114,8 +116,24 @@ public class CharacterStats : MonoBehaviour {
             }
 
 
+            //If this is the player Get the correspondaning Camera
+            if (this.gameObject.tag == "Player")
+            {
+                if (camShake == null)
+                {
+                    //this.gameObject.GetComponent<murphyPlayerController>().CameraPrefab.GetComponent<CameraShake>();
+                  //  camShake = SceneSettings.Instance.humanPlayer.gameObject.GetComponentInChildren<murphyPlayerController>().CameraPrefab.GetComponent<CameraShake>();
+                    Debug.Log("Finding Camera".Bold());
+                 camShake = GameObject.FindGameObjectWithTag("CamFollow").GetComponent<CameraShake>();
+                }
 
-            this.gameObject.GetComponent<murphyPlayerController>().CameraPrefab.GetComponent<CameraShake>().ShakeCam = true;
+                else if (camShake != null)
+                {
+                    camShake.ShakeCam = true;
+                }
+             
+            }
+         
 
             // Subtract the armor value
             damage -= armor.GetValue();
