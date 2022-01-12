@@ -12,6 +12,16 @@ public class CameraShake : MonoBehaviour
     public float duration = 1.5f;
 
 
+    private void OnEnable()
+    {
+        CharacterStats.OnCamShake += EnableCamShake;
+    }
+
+    private void OnDisable()
+    {
+        CharacterStats.OnCamShake -= EnableCamShake;
+    }
+
     public void Start()
     {
         ShakeCam = false;
@@ -81,5 +91,10 @@ public class CameraShake : MonoBehaviour
         }
 
 //        transform.localPosition = originalPOS;
+    }
+
+    void EnableCamShake()
+    {
+        ShakeCam = true;
     }
 }

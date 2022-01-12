@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class CharacterStats : MonoBehaviour {
 
@@ -48,8 +49,11 @@ public class CharacterStats : MonoBehaviour {
     public GameObject RagdollGO;
 
 
-    [Header("CameraShake")]
-    public CameraShake cameraShake;
+   // [Header("CameraShake")]
+    public delegate void ShakeAction();
+    public static event ShakeAction OnCamShake;
+
+
     //public Camera cam;
 
     //reference to charactercombatscript
@@ -60,7 +64,10 @@ public class CharacterStats : MonoBehaviour {
 
     public static bool damageTrigger = false;
 
-    CameraShake camShake;
+    //Photon
+    [Header("Photon Settings")]
+    [HideInInspector]
+    public PhotonView PV;
 
     // Set current health to max health
     // when starting the game.
@@ -69,8 +76,9 @@ public class CharacterStats : MonoBehaviour {
         currentHealth = maxHealth;
         characterCombat = GetComponent<CharacterCombat>();
         anim = GetComponent<Animator>();
-        
-        
+
+        //Photon
+        PV = PhotonView.Get(this);
     }
 
     public void Update()
@@ -81,16 +89,20 @@ public class CharacterStats : MonoBehaviour {
             Die();
         }
 
-       if (characterCombat.dealingDamage == true || PlayerTakesDamage == true || EnemyTakesDamage == true)
+        if (PV.IsMine)
         {
-            //HERE THE PLAYER WILL TAKE DAMAGE BASED ON 'CHARACTER COMBAT'S'
+            if (characterCombat.dealingDamage == true || PlayerTakesDamage == true || EnemyTakesDamage == true)
+            {
+                //HERE THE PLAYER WILL TAKE DAMAGE BASED ON 'CHARACTER COMBAT'S'
 
-          
-          //  StartCoroutine(cameraShake.Shake(.10f, .2f));   //This is the line for shaking the camera on hit.
-            DamageRecieved = characterCombat.damageDealt;   // This is the line for determining what damage is taken. Damage recieved by the enemy is the damage recieved from combat.
-            TakeDamage(DamageRecieved);                     // This is the line for taking damage.
-            Debug.Log("Damage Recieved" + DamageRecieved);  // Debug Log
+
+                //  StartCoroutine(cameraShake.Shake(.10f, .2f));   //This is the line for shaking the camera on hit.
+                DamageRecieved = characterCombat.damageDealt;   // This is the line for determining what damage is taken. Damage recieved by the enemy is the damage recieved from combat.
+                TakeDamage(DamageRecieved);                     // This is the line for taking damage.
+                Debug.Log("Damage Recieved" + DamageRecieved);  // Debug Log
+            }
         }
+
 
     }
 
@@ -119,19 +131,12 @@ public class CharacterStats : MonoBehaviour {
             //If this is the player Get the correspondaning Camera
             if (this.gameObject.tag == "Player")
             {
-                if (camShake == null)
+                if (PV.IsMine)
                 {
-                    //this.gameObject.GetComponent<murphyPlayerController>().CameraPrefab.GetComponent<CameraShake>();
-                  //  camShake = SceneSettings.Instance.humanPlayer.gameObject.GetComponentInChildren<murphyPlayerController>().CameraPrefab.GetComponent<CameraShake>();
-                    Debug.Log("Finding Camera".Bold());
-                 camShake = GameObject.FindGameObjectWithTag("CamFollow").GetComponent<CameraShake>();
+                    ///triger camera shake
+                    OnCamShake();
                 }
-
-                else if (camShake != null)
-                {
-                    camShake.ShakeCam = true;
-                }
-             
+            
             }
          
 

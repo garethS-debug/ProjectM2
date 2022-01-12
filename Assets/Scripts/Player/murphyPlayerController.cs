@@ -132,8 +132,9 @@ public class murphyPlayerController : MonoBehaviour
 				CameraPrefab = Instantiate(camPrefab, this.transform.position, camPrefab.transform.rotation);
 				//Camera
 				_camControll = CameraPrefab.GetComponent<CameraOnRails>();
-
 				_camControll.player = this.gameObject.transform;
+
+				
 			}
 
 

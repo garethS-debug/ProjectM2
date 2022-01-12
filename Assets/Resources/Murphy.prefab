@@ -11219,7 +11219,7 @@ MonoBehaviour:
   HitCounter: 0
   DamageRecieved: 0
   RagdollGO: {fileID: 4205541660489880486}
-  cameraShake: {fileID: 0}
+  PV: {fileID: 0}
 --- !u!114 &5634039011788017557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11344,7 +11344,7 @@ MonoBehaviour:
   HitCounter: 0
   DamageRecieved: 0
   RagdollGO: {fileID: 4205541660489880486}
-  cameraShake: {fileID: 0}
+  PV: {fileID: 0}
 --- !u!114 &7013714662342069681
 MonoBehaviour:
   m_ObjectHideFlags: 0
